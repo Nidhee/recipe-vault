@@ -1,0 +1,141 @@
+[
+  {
+    "recipeId": 1,
+    "name": "Milk masala",
+    "description": "For the Home-made special masala milk powder",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 10,
+    "servings": 10,
+    "difficultyLevel": "Easy",
+    "mealType": "Drink",
+    "cuisine": "Indian",
+    "ingredients": [
+      {
+        "item": "Cardamom",
+        "qty": 15,
+        "maxQty": 18,
+        "unit": "nos"
+      },
+      {
+        "item": "Cashew nuts",
+        "qty": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "Almonds",
+        "qty": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "Pistachios",
+        "qty": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "Black pepper (Crushed)",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Grated nutmeg",
+        "qty": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "Milk powder (optional)",
+        "qty": 4,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Saffron",
+        "qty": 0.5,
+        "unit": "gram"
+      },
+      {
+        "item": "Turmeric powder",
+        "qty": 1,
+        "unit": "tsp"
+      }
+    ],
+    "method": [
+      "Set a pan on medium heat and dry roast the almonds, pistachios & cashew nuts.",
+      "Remove off heat after 3-4 minutes & cool them down.",
+      "Now in a mixer grinder add the roasted nuts, saffron, black pepper, grated nutmeg, milk powder, turmeric & milk powder. The milk powder gives the milk the extra creaminess. You could avoid if you do not have it.",
+      "Grind it in pulse mode in short batches "
+    ],
+    "thumbnail": ""
+  },
+  {
+    "recipeId": 2,
+    "name": "Khandvi",
+    "description": "For the Home-made special masala milk powder",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 30,
+    "servings": 4,
+    "difficultyLevel": "Hard",
+    "mealType": "Snack",
+    "cuisine": "Indian",
+    "ingredients": [
+      {
+        "item": "Besan",
+        "qty": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "Buttermilk sour",
+        "qty": 3,
+        "unit": "cup"
+      },
+      {
+        "item": "Salt",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Haldi",
+        "qty": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "Hing",
+        "qty": 1,
+        "unit": "Pinch"
+      },
+      {
+        "item": "Oil",
+        "qty": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "Mustard seeds",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Sesame seed",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Fresh Coriander",
+        "qty": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Fresh coconut",
+        "qty": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "method": [
+      "In a bowl add the buttermilk, besan, salt, hing& turmeric powder, whisk it well using a whisk so that no lumps remain.",
+      "Pour the batter into a nonstick pan & cook over low heat until it becomes thick & achieves a slight shine, this process will take 25 minutes, make sure you keep stirring the batter continuously.",
+      "Once cooked place some portion of the batter onto the backside of a tray or a plate, cover the pan to keep the remaining batter hot, then using a scrapper or a spatula spread the batter on the surface into a thin sheet & as evenly as possible, spread the remaining batter on other plates similarly & let it cool down for 10 minutes.",
+      "Once cooled, make cuts of 2-3 inches & then roll the khandvi from one end to the other, roll all the other khandvis Similarly, you can keep the thickness of the khandvi as per your preference.",
+      "To make the tadka, set a pan over high heat & once it gets hot add in the oil & let the oil heat up as well.",
+      "Add in all mustard seeds and sesame seeds stir briefly & pour the tadka over the khandvis.",
+      "Your delicious khandvi is ready, garnish with fresh coriander & fresh desiccated coconut & serve."
+    ],
+    "thumbnail": ""
+  }
+]

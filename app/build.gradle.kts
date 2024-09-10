@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.daggerHilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -51,6 +53,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.dagger)
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.hilt.compiler)
     implementation(libs.gson)
     implementation(libs.coroutines.core)
     implementation(libs.glide)

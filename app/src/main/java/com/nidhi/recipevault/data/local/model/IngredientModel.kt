@@ -3,7 +3,7 @@ package com.nidhi.recipevault.data.local.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Ingredient(
+data class IngredientModel(
     @SerializedName("item")
     val item: String,
     @SerializedName("maxQty")

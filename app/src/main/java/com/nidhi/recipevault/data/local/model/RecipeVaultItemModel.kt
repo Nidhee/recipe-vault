@@ -3,7 +3,7 @@ package com.nidhi.recipevault.data.local.model
 
 import com.google.gson.annotations.SerializedName
 
-data class RecipeVaultItem(
+data class RecipeVaultItemModel(
     @SerializedName("cookTimeMinutes")
     val cookTimeMinutes: Int,
     @SerializedName("cuisine")
@@ -13,7 +13,7 @@ data class RecipeVaultItem(
     @SerializedName("difficultyLevel")
     val difficultyLevel: String,
     @SerializedName("ingredients")
-    val ingredients: List<Ingredient>,
+    val ingredients: List<IngredientModel>,
     @SerializedName("mealType")
     val mealType: String,
     @SerializedName("method")

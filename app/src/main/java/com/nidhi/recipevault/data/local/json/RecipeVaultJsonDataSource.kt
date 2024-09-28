@@ -1,9 +1,10 @@
 package com.nidhi.recipevault.data.local.json
 
 import android.content.Context
+import javax.inject.Inject
 
-class RecipeVaultJsonDataSource {
-    fun readJsonFromAssets(context: Context, fileName: String): String {
+class RecipeVaultJsonDataSource @Inject constructor(private val context: Context){
+    fun readJsonFromAssets(fileName: String): String {
         val jsonString = context.assets.open(fileName).bufferedReader().use {
             it.readText()
         }

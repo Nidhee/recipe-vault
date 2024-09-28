@@ -1,5 +1,6 @@
 package com.nidhi.recipevault
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class RecipeVaultApp : Application() {
-}
+@HiltAndroidApp
+class RecipeVaultApp : Application() {}

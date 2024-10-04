@@ -17,6 +17,7 @@ interface RecipeVaultDao {
 
     @Query("SELECT * FROM recipes where recipe_id = :recipeId")
     suspend fun getRecipeByID(recipeId : Int) : RecipeVaultEntity?
+
     @Query("SELECT * FROM recipes")
     fun getAllRecipes() : Flow<List<RecipeVaultEntity>>
 }

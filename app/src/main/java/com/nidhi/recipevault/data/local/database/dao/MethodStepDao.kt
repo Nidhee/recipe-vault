@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface MethodStepDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMethodSteps(steps : List<MethodStepEntity>)
-    
+
     @Query("SELECT * FROM method_steps where recipe_id = :recipeId ORDER BY step_order ASC")
     fun getMethodStepsForRecipe(recipeId: Int) : Flow<List<MethodStepEntity>>
 }

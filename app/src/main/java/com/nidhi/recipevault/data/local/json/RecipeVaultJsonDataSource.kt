@@ -4,7 +4,7 @@ import android.content.Context
 import javax.inject.Inject
 
 class RecipeVaultJsonDataSource @Inject constructor(private val context: Context){
-    fun readJsonFromAssets(fileName: String): String {
+    suspend fun readJsonFromAssets(fileName: String): String {
         val jsonString = context.assets.open(fileName).bufferedReader().use {
             it.readText()
         }

@@ -9,11 +9,12 @@ import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.Me
 import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.RecipeVaultEntity
 import com.nidhi.recipevault.com.nidhi.recipevault.data.local.model.MethodStepModel
 import com.nidhi.recipevault.data.local.model.RecipeVaultItemModel
+import javax.inject.Inject
 
 /**
  *  Handles domain models to entity and entity to domain models mapping
  */
-class RecipeVaultModelToEntityMapper {
+class RecipeVaultModelToEntityMapper @Inject constructor(){
 
     /**
      * TODO : check this mapper is needed or not

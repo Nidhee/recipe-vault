@@ -12,13 +12,14 @@ class RecipeVaultJsonToModelMapper {
     /**
      * Parses json to domain model classes
      */
-    fun parseJsonToDomainModel(jsonString: String): RecipeVaultModel? {
+    suspend fun parseJsonToDomainModel(jsonString: String): RecipeVaultModel? {
         val gson = Gson()
         val recipeVault = gson.fromJson(jsonString, RecipeVaultModel::class.java)
         println("recipe vault object $recipeVault")
         return recipeVault
     }
     /**
+     * TODO : check if we need this method
      * Maps json method string to Method Step model classs
      */
     fun mapJsonMethodStepsToDomainModel(recipeId: Int, methodSteps: List<String>): List<MethodStepModel> {

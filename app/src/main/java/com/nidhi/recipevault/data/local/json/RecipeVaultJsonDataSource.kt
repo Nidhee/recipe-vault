@@ -1,6 +1,8 @@
 package com.nidhi.recipevault.data.local.json
 
 import android.content.Context
+import android.util.Log
+import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
 import javax.inject.Inject
 
 class RecipeVaultJsonDataSource @Inject constructor(private val context: Context){
@@ -8,7 +10,7 @@ class RecipeVaultJsonDataSource @Inject constructor(private val context: Context
         val jsonString = context.assets.open(fileName).bufferedReader().use {
             it.readText()
         }
-        println("recipe vault jsonString $jsonString")
+        Log.d(LogUtils.getTag(this::class.java), "recipe vault jsonString $jsonString")
         return jsonString
     }
 }

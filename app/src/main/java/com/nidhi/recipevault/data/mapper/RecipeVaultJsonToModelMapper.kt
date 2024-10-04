@@ -1,7 +1,9 @@
 package com.nidhi.recipevault.data.mapper
 
+import android.util.Log
 import com.google.gson.Gson
 import com.nidhi.recipevault.com.nidhi.recipevault.data.local.model.MethodStepModel
+import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.data.local.model.RecipeVaultModel
 
 /**
@@ -15,7 +17,7 @@ class RecipeVaultJsonToModelMapper {
     suspend fun parseJsonToDomainModel(jsonString: String): RecipeVaultModel? {
         val gson = Gson()
         val recipeVault = gson.fromJson(jsonString, RecipeVaultModel::class.java)
-        println("recipe vault object $recipeVault")
+        Log.d(LogUtils.getTag(this::class.java), "recipe vault object $recipeVault")
         return recipeVault
     }
     /**

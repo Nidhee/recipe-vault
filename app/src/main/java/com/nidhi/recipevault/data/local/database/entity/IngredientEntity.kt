@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.RecipeUnit
 
 
 @Entity(
@@ -22,5 +23,5 @@ data class IngredientEntity(
     val item: String,
     val qty: Double?,
     @ColumnInfo(name = "max_qty") val maxQty: Double?,
-    val unit: Unit?
+    val unit: RecipeUnit?
 )

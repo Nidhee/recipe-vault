@@ -13,5 +13,5 @@ enum class Cuisine {
 }
 
 enum class RecipeUnit {
-    NOS, CUP, TSP, TBSP, GRAM
+    NOS, CUP, TSP, TBSP, GRAM, PINCH
 }

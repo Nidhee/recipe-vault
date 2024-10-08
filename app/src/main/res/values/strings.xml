@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RecipeVault</string>
+    <string name="recipe_list_screen_title">What do you want to cook today?</string>
 </resources>

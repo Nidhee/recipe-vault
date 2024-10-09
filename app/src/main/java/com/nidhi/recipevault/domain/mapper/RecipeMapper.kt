@@ -6,8 +6,9 @@ import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.Re
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MethodStep
 import com.nidhi.recipevault.domain.model.Recipe
+import javax.inject.Inject
 
-class RecipeMapper(private val enumMapper: EnumMapper) {
+class RecipeMapper @Inject constructor(private val enumMapper: EnumMapper) {
 
     /**
     Map from RecipeVaultEntity (data layer) to Recipe (domain model)

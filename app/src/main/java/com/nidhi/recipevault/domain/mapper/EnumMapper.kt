@@ -10,8 +10,9 @@ import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.CuisineDomain
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.DifficultyLevelDomain
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MealTypeDomain
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.RecipeUnitDomain
+import javax.inject.Inject
 
-class EnumMapper {
+class EnumMapper @Inject constructor(){
     /**
      *   DifficultyLevel Mappers : data to domain
       */

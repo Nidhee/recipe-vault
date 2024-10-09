@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.recipelist
+package com.nidhi.recipevault.com.nidhi.recipevault.ui.screen
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

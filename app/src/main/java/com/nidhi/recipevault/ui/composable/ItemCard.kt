@@ -44,7 +44,7 @@ fun ItemCard(
         defaultDrawable // Use default drawable if thumbnailName is null or empty
     }
     Card(
-        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         modifier = modifier
             .fillMaxWidth()
             .wrapContentHeight(),

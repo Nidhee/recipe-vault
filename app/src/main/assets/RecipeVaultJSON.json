@@ -137,5 +137,597 @@
       "Your delicious khandvi is ready, garnish with fresh coriander & fresh desiccated coconut & serve."
     ],
     "thumbnail": "ic_khandvi"
+  },
+  {
+    "recipeId": 3,
+    "name": "Dahi wali Bhindi Masala",
+    "description": "For all the Bhindi lovers out there, check out this spicy Bhindi masala recipe and do try.",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 30,
+    "servings": 4,
+    "difficultyLevel": "Easy",
+    "mealType": "Lunch",
+    "cuisine": "Indian",
+    "ingredients": [
+      {
+        "item": "Ladyfinger",
+        "qty": 0.5,
+        "unit": "kg"
+      },
+      {
+        "item": "Green chili (slit into half)",
+        "qty": 4,
+        "unit": "cup"
+      },
+      {
+        "item": "Degi red chilli powder",
+        "qty": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "Turmeric powder",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Coriander powder",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Mustard oil",
+        "qty": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "Oil",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Salt",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Cumin seeds,",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": " Fennel seeds",
+        "qty": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "Coriander seeds",
+        "qty": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "Fenugreek leaves",
+        "qty": 1,
+        "unit": "cup"
+      },
+      {
+        "item": " Tomato, roughly chopped",
+        "qty": 1,
+        "unit": "nos"
+      },
+      {
+        "item": "Curd",
+        "qty": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "Ginger, peeled",
+        "qty": 1,
+        "unit": "inch"
+      },
+      {
+        "item": "Gram flour",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Sugar",
+        "qty": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "method": [
+      "In a large bowl, add ladyfinger, green chili, degi red chili powder, turmeric powder, coriander powder.",
+      "Add mustard oil, oil, salt to taste and mix well.",
+      "Heat a pan on medium flame, transfer the marinated lady finger into the pan and saute well.",
+      "Add tomato and saute for a minute.",
+      "In a bowl, add curd, turmeric powder, degi red chili powder, coriander powder, salt to taste.",
+      "Add mustard oil, gram flour and mix well. Keep aside for further use.",
+      "In a mortar pestle, add ginger, green chili, salt to taste and grind it into a rough paste and keep aside for further use.",
+      "In a deep pan or kadai, add oil, mustard oil once it gets hot, add cumin seeds, fennel seeds, coriander seeds and let it splutter well.",
+      "Add prepared ginger garlic paste and saute well.",
+      "Add curd mixture and mix well. Cook on medium flame for 2-3 minutes, add few fenugreek leaves, water and mix well.",
+      "Add sugar, sauteed lady finger and tomatoes and mix well on low flame.",
+      "Once done transfer it into a serving bowl to serve."
+    ],
+    "thumbnail": "ic_dahi_bhindi"
+  },
+  {
+    "recipeId": 4,
+    "name": "Handvo",
+    "description": "Handvo is a savory vegetable cake originating from Gujarat.",
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 30,
+    "servings": 4,
+    "difficultyLevel": "Medium",
+    "mealType": "Snack",
+    "cuisine": "Indian",
+    "ingredients": [
+      {
+        "item": "rice",
+        "qty": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "chana dal",
+        "qty": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "tur dal",
+        "qty": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "urad dal",
+        "qty": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "bottle gaurd grated",
+        "qty": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "carrot grated",
+        "qty": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "green chilly paste",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "ginger paste",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "salt",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "haldi",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "hing",
+        "qty": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "oil",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "baking soda",
+        "qty": 1,
+        "unit": "pinch"
+      },
+      {
+        "item": "mustard seeds",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "sesame seeds",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "curry leaves",
+        "qty": 8,
+        "max_qty" : 10,
+        "unit": "nos"
+      },
+      {
+        "item": "water",
+        "qty": 1,
+        "unit": "cup"
+      }
+    ],
+    "method": [
+      "Add the rice in one bowl & all the dals into another bowl & wash them until the added water turns clear and let them soak for 5-6 hours or overnight seperately.",
+      "Grind all dal first separately and then rice separate into a semi-fine paste, the batter should feel like fine semolina then pressed between the fingers.",
+      "Transfer the batter into a large bowl & whisk is for a few minutes, then cover & place it in a warm place to ferment for 10-12 hours (the batter should ferment in 6-8 hours during summer).",
+      "Once ferment mix the batter gently & add the grated bottle gourd, carrot & chilly paste, ginger paste, turmeric, hing, salt to the batter, add water as required to adjust the consistency of the batter, it should not be too thick not too thin, it should be like idli batter.",
+      "To cook the handvo you will need a thick bottomed vessel or a non-stick pan.",
+      "Take 3 ladle full of the batter into a separate bowl & add baking soda into it & mix well.",
+      "Set the kadhai over high heat and once it gets hot, add the oil & let the oil heat up as well.",
+      "Further add mustard seeds, sesame seeds,curry leaves then pour the batter into the kadhai, cover & cook over low flame for 8 minutes.",
+      "Flip the handvo carefully after 15 minutes & cook from the other side for 15 minutes.",
+      "Your delicious & healthy handvo is ready."
+    ],
+    "thumbnail": "ic_handvo"
+  },
+
+  {
+    "recipeId": 5,
+    "name": "Vegetables in Paprika Sauce with Spinach Rice",
+    "description": "",
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 30,
+    "servings": 4,
+    "difficultyLevel": "Medium",
+    "mealType": "Dinner",
+    "cuisine": "Indian",
+    "ingredients": [
+      {
+        "item": "Spinach",
+        "qty": 1,
+        "unit": "bunch"
+      },
+      {
+        "item": "Salt",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Mint",
+        "qty": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Coriander",
+        "qty": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Green chillies",
+        "qty": 2,
+        "unit": "nos"
+      },
+      {
+        "item": "Ice cubes",
+        "qty": 1,
+        "max_qty":3,
+        "unit": "nos"
+      },
+      {
+        "item": "Butter",
+        "qty": 2,
+        "max_qty":4,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Oil",
+        "qty": 3,
+        "max_qty":4,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Garlic",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Red chilli flakes",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Cooked basmati rice",
+        "qty": 2,
+        "unit": "cup"
+      },
+      {
+        "item": "Black pepper powder",
+        "qty": 1,
+        "unit": "pinch"
+      },
+      {
+        "item": "Nut meg powder",
+        "qty": 1,
+        "unit": "pinch"
+      },
+      {
+        "item": "Baby corn",
+        "qty": 0.3,
+        "unit": "cup"
+      },
+      {
+        "item": "Carrot",
+        "qty": 0.3,
+        "unit": "cup"
+      },
+      {
+        "item": "Zucchini",
+        "qty": 0.3,
+        "unit": "cup"
+      },
+      {
+        "item": "Mixed bell peppers",
+        "qty": 0.3,
+        "unit": "cup"
+      },
+      {
+        "item": "Broccoli",
+        "qty": 0.3,
+        "unit": "bunch"
+      },
+      {
+        "item": "Refined flour (maida)",
+        "qty": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Milk",
+        "qty": 500,
+        "unit": "ml"
+      },
+      {
+        "item": "Paprika powder or Red chilly powder",
+        "qty": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Paneer cubes",
+        "qty": 1,
+        "unit": "cup"
+      }
+    ],
+    "method": [
+      "Set water for boiling, add the cleaned and washed spinach leaves and blanch for few seconds, remove and immediately transfer to ice cold water. This process helps in retaining the bright green colour of spinach.",
+      "Now, transfer the spinach in grinding jar, along with fresh mint leaves, coriander leaves, green chillies and few ice cubes, grind to a fine puree and keep aside.",
+      "Set a wok on medium heat, add butter & oil, garlic and red chilli flakes, cook for 1-2 minutes on medium flame, now add the spinach puree and cook for 4-5 minutes.",
+      "Now add the cooked rice, salt to taste, black pepper powder a pinch, stir and cook for 2-3 minutes, stir gently without breaking the rice grains. Spinach rice is ready.",
+      "For sautéed veggies, set a wok on medium heat, add oil, garlic and red chilli flakes, cook for 2-3 minutes.",
+      "Now, add baby corn & carrot and cook for 2-3 minutes on high flame, further add the remaining veggies, salt & pepper to taste, stir and cook for 2-3 minutes, sautéed veggies are ready, keep aside to be added later in the paprika sauce.",
+      "For paprika sauce, set a sauce pan or wok on low heat, add butter and flour, mix and cook for 3-4 minutes, now add milk in 3-4 batches, make sure to whisk well while adding milk to avoid lump formation. Cook the sauce until its thick and creamy.",
+      "Now add paprika powder, salt to taste, black pepper powder a pinch and nutmeg powder, mix well and cook for 1-2 minutes, further add the sautéed veggies and cook for 1-2 minutes, now add the paneer and mix gently.",
+      "Paprika sauce with sautéed veggies and paneer is ready, serve hot with hot spinach rice."
+    ],
+    "thumbnail": "ic_spinach_rice_and_veges"
+  },
+  {
+    "recipeId": 6,
+    "name": "Mango Falooda",
+    "description": "A falooda is a Mughalai cold dessert made with vermicelli,sweet basil seeds and flavoured rose milk, often served with ice cream",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 30,
+    "servings": 4,
+    "difficultyLevel": "Easy",
+    "mealType": "Drink",
+    "cuisine": "Indian",
+    "ingredients": [
+      {
+        "item": "Water",
+        "qty": 1,
+        "max_qty": 4,
+        "unit": "cup"
+      },
+      {
+        "item": "Ice cubes",
+        "qty": 2,
+        "unit": "cup"
+      },
+      {
+        "item": "Corn Flour",
+        "qty": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "Sabja",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Mangoes",
+        "qty": 4,
+        "unit": "no"
+      },
+      {
+        "item": "Condensed Milk",
+        "qty": 250,
+        "unit": "grams"
+      },
+      {
+        "item": "Milk",
+        "qty": 1,
+        "unit": "litre"
+      }
+    ],
+    "method": [
+      "To make the falooda sev you will first need to make an ice bath, in a large bowl pour some water & then add the ice cubes into it, your ice bath is ready, along with that you will also need a chakli maker mold with the thinnest plate which is easily available in the market.",
+      "Now in a separate bowl add the conflour & 1 cup of the total water & whisk it to make a lump free mixture, then add the 1.5 remaining water & mix well again.",
+      "Pour this mixture in a nonstick pan & cook it over medium to low flame until it gets pasty & translucent, you will have to keep stirring the mixture continuously, this process will take upto 4-5 minutes.",
+      "Once the mixture turns translucent add it into the mold carefully, use a napkin to hold the mold, fill it sufficiently & then pipe the mixture out using the mold directly over the ice bath, the falooda sev will set once it touches the ice-cold water, you can repeat the process with the remaining mixture & if the mixture gets cold you can reheat it in the pan while stirring it continuously.",
+      "Let the falooda sev rest in the ice-cold water for 30 minutes. After that your falooda sev will be ready.",
+      "To make mango puree, add the chopped mangos in a mixer grinder jar & blend it into a fine puree, remove ½ a cup of puree aside to use it while plating.",
+      "In the same mixer grinder jar with the remaining mango puree add the condensed milk & milk, blend it well until all the ingredients combine.",
+      "Your mango flavoured thick milk is ready, put it in the fridge & serve it chilled.",
+      "For assembly: layer falooda sev, soaked sabja, mangoo pure, mango flavoured milk. You can top it up with some ice cream or kulfi"
+    ],
+    "thumbnail": "ic_mango_faluda"
+  },
+  {
+    "recipeId": 7,
+    "name": "Dal Dhokadi",
+    "description": "Gujarati pasta with sweet and spicy lentil soup",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 35,
+    "servings": 4,
+    "difficultyLevel": "Medium",
+    "mealType": "Lunch",
+    "cuisine": "Indian",
+    "ingredients": [
+      {
+        "item": "Water",
+        "qty": 1,
+        "max_qty": 4,
+        "unit": "cup"
+      },
+      {
+        "item": "Tur Dal",
+        "qty": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "Haldi",
+        "qty": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "Salt",
+        "qty": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "Peanuts",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Ghee",
+        "qty": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Oil",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Mustard seeds",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Cumin seeds",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Cloves",
+        "qty": 2,
+        "max_qty": 3,
+        "unit": "no"
+      },
+      {
+        "item": "Cinnamon",
+        "qty": 0.5,
+        "unit": "inch"
+      },
+      {
+        "item": "Fenugreek seeds",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Red chilly dry",
+        "qty": 2,
+        "unit": "no"
+      },
+      {
+        "item": "Hing",
+        "qty": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Curry leaves",
+        "qty": 8,
+        "max_qty": 10,
+        "unit": "tsp"
+      },
+      {
+        "item": "Tomato",
+        "qty": 1,
+        "unit": "no"
+      },
+      {
+        "item": "Ginger chilly paste",
+        "qty": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "Jaggery",
+        "qty": 2,
+        "max_qty": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Tamrind pulp",
+        "qty": 2,
+        "max_qty": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Kashmiri red chilly",
+        "qty": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "Hot water",
+        "qty": 2,
+        "max_qty": 5,
+        "unit": "tsp"
+      },
+      {
+        "item": "Wheat flour",
+        "qty": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "Gram flour",
+        "qty": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Carom seeds",
+        "qty": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "Fresh Coriandar",
+        "qty": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "method": [
+      "Wash the toor dal well & soak it in fresh water for 30 minutes to an hour.",
+      "Once soaked, discard the water & add the dal into a pressure cooker & add water, turmeric powder & salt.",
+      "Place a steel bowl over the dal in the cooker & add the peanuts into the bowl, put the cooker’s lid on & cook the dal over medium high flame for 2-3 whistles, then switch off the flame & let the cooker de-pressurize.",
+      "Once de-pressurized open the lid, remove the peanuts & set them aside, then blend the dal using a blender, your boiled toor dal is ready.",
+      "Now to temper the dal set a deep pan or a stock pot over high flame & once it gets hot add in the ghee and oil mix & let it heat as well.",
+      "Once the ghee gets hot add the cumin seeds, mustard seeds, cloves, cinnamon, red chillies, fenugreek seeds, hing, curry leaves, chopped tomato, ginger chilli paste & salt to taste, stir & cook over high flame until the tomatoes get slightly mushy.",
+      "Further add turmeric powder & kashmiri red chilli powder, stir quickly & add the boiled dal, stir well & add hot water to adjust the consistency of the dal, make sure to keep the dal a little watery at this stage as its going to simmer for a while you will be making the dhoklis.",
+      "Add the boiled peanuts, jaggery & tamarind pulp, stir well & set the flame to medium low, let the dal simmer until you prepare the dhoklis.",
+      "In a large bowl add wheat flour, gram flour,salt as per taste,hing,carom seeds,turmeric 1/2 tsp,kashmiri chilli powder 1/2 tsp along with the oil & mix everything well.",
+      "Further add water as required to make a semi-soft dough, the dough should be of the same stiffness as a puri/chapati dough.",
+      "Once you have kneaded the dough, cover it with a damp cloth for 10-15 minutes.",
+      "Divide the dough into 2 portions once rested, coat one portion with dry flour & roll it into a large chapati, it shouldn’t be too thick or too thin.",
+      "Further cut the chapati into squares, diamonds or strips using a pizza cutter or a knife, diamonds shape is more preferable",
+      "Cut the second portion similarly & your dhoklis will be ready to be added into the dal.",
+      "Check the dal that has been simmering, taste & adjust accordingly, Add tablespoon of both tamarind pulp & jaggery, stir well & bring the dal to a boil before adding the dhoklis or else the dhoklis will stick to each other when you add them in the dal.",
+      "Once the dal comes to a boil, add the all the cut dhoklis carefully & then gently stir them into the dal.",
+      "Cover the pan with a lid & cook over medium low flame for 10 - 15 minutes.",
+      "Once cooked, remove the lid, you will see that the dal has thickened up a bit & the dhoklis will have fluffed up.",
+      "Add some freshly chopped coriander & stir well.",
+      "Your dal dhokli is ready, add ghee & lemon juice over the dal while serving along with crispy papads."
+    ],
+    "thumbnail": "ic_dal_dhokadi"
   }
 ]

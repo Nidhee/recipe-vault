@@ -13,10 +13,13 @@ import com.nidhi.recipevault.com.nidhi.recipevault.domain.repository.RecipeRepos
 import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.data.local.model.RecipeVaultModel
 import com.nidhi.recipevault.domain.model.Recipe
+import kotlinx.coroutines.Delay
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class RecipeRepositoryImpl @Inject constructor(
@@ -42,21 +45,29 @@ class RecipeRepositoryImpl @Inject constructor(
     }
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun getAllRecipes(): Flow<List<Recipe>> {
+        Log.d(LogUtils.getTag(this::class.java), "getAllRecipes")
         val recipeDBDataFlow: Flow<List<RecipeVaultEntity>> = recipeVaultDao.getAllRecipes()
-        val recipeDomainFlow: Flow<List<Recipe>> =
-            /* First flatten the Flow<List<RecipeVaultEntity>> so that we can process each entity in parallel,
-                fetching the corresponding ingredients and method steps.
-             */
-            recipeDBDataFlow.flatMapLatest { recipeEntities : List<RecipeVaultEntity> ->
-                val recipeFlows: List<Flow<Recipe>> = recipeEntities.map { recipeEntity : RecipeVaultEntity ->
-                    fetchRecipeWithDetails(recipeEntity)
+        /* First flatten the Flow<List<RecipeVaultEntity>> so that we can process each entity in parallel, fetching the corresponding ingredients and method steps.*/
+        return recipeDBDataFlow.flatMapLatest { recipeEntities : List<RecipeVaultEntity> ->
+                if(recipeEntities.isEmpty()){
+                    Log.e(LogUtils.getTag(this::class.java), "getAllRecipes >> fetching recipes is empty")
+                    // Emit an empty list if no recipes are found
+                    flow { emit(emptyList()) }
+                } else {
+                    val recipeFlows: List<Flow<Recipe>> =
+                        recipeEntities.map { recipeEntity: RecipeVaultEntity ->
+                            fetchRecipeWithDetails(recipeEntity)
+                        }
+                    /* combine collects each flow (Flow<Recipe>) in parallel and produces a single flow of a list (Flow<List<Recipe>>) */
+                    combine(recipeFlows) { arrayOfResults: Array<Recipe> ->
+                        arrayOfResults.toList()
+                    }
                 }
-                /* combine collects each flow (Flow<Recipe>) in parallel and produces a single flow of a list (Flow<List<Recipe>>) */
-                combine(recipeFlows) { arrayOfResults: Array<Recipe> ->
-                    arrayOfResults.toList()
-                }
+            }.catch { exception ->
+                // Emit an empty list in case of an error
+                Log.e(LogUtils.getTag(this::class.java), "getAllRecipes >> Error fetching recipes", exception)
+                emit(emptyList())
             }
-        return recipeDomainFlow
     }
 
     /**

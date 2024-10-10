@@ -88,7 +88,7 @@ fun ItemCard(
                     ) {
                         Text(
                             text = title,
-                            style = MaterialTheme.typography.labelSmall,
+                            style = MaterialTheme.typography.bodyMedium,
                             color = Color.White
                         )
                         content?.invoke() // Render optional content if provided

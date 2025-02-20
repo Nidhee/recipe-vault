@@ -7,4 +7,34 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#979696</color>
+    <color name="md_theme_light_semi_transparent_black">#80000000</color>
+
+    <color name="colorPrimary">#FF6750A4</color> <!-- Purple 500 -->
+    <color name="colorOnPrimary">#FFFFFFFF</color> <!-- White -->
+    <color name="colorPrimaryContainer">#FFEADDFF</color> <!-- Light Purple 50 -->
+    <color name="colorOnPrimaryContainer">#FF21005D</color> <!-- Dark Purple 900 -->
+
+    <color name="colorSecondary">#FF625B71</color>
+    <color name="colorOnSecondary">#FFFFFFFF</color>
+    <color name="colorSecondaryContainer">#FFE8DEF8</color>
+    <color name="colorOnSecondaryContainer">#FF1D192B</color>
+
+    <color name="colorTertiary">#FF7D5260</color>
+    <color name="colorOnTertiary">#FFFFFFFF</color>
+    <color name="colorTertiaryContainer">#FFFFD8E4</color>
+    <color name="colorOnTertiaryContainer">#FF31111D</color>
+
+    <color name="colorError">#FFB3261E</color> <!-- Red 500 -->
+    <color name="colorOnError">#FFFFFFFF</color> <!-- White -->
+    <color name="colorErrorContainer">#FFF9DEDC</color>
+    <color name="colorOnErrorContainer">#FF410E0B</color>
+
+    <color name="colorBackground">#FFFFFBFE</color> <!-- Grey 100 -->
+    <color name="colorOnBackground">#FF1C1B1F</color> <!-- Black -->
+
+    <color name="colorSurface">#FFFFFBFE</color> <!-- White -->
+    <color name="colorOnSurface">#FF1C1B1F</color> <!-- Black -->
+    <color name="colorSurfaceVariant">#FFE7E0EC</color> <!-- Black -->
+    <color name="colorOnSurfaceVariant">#FF49454F</color> <!-- Black -->
 </resources>

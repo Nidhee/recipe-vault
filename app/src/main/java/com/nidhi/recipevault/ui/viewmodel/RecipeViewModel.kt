@@ -49,7 +49,7 @@ class RecipeViewModel @Inject constructor(private val getAllRecipesUseCase: GetA
                 Log.e(LogUtils.getTag(this::class.java), "Error fetching recipes", exception)
                 _recipesState.value = RecipeUiState.Error(exception.message ?: "Unknown Error")
             }.collect { recipes ->
-                Log.d(LogUtils.getTag(this::class.java), "Fetched recipes: $recipes")
+                Log.d(LogUtils.getTag(this::class.java), "Fetched recipes: ${recipes.size}")
                 if (recipes.isEmpty()) {
                     Log.d(LogUtils.getTag(this::class.java), "State: NoRecipes")
                     _recipesState.value = RecipeUiState.NoRecipes

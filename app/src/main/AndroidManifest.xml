@@ -14,7 +14,7 @@
         android:theme="@style/Theme.RecipeVault"
         tools:targetApi="31" >
         <activity
-            android:name=".com.nidhi.recipevault.ui.screen.RecipeListActivity"
+            android:name=".com.nidhi.recipevault.ui.activity.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

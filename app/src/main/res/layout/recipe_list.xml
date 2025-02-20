@@ -1,0 +1,58 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/screen_header_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recipe_list_screen_title"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:paddingBottom="8dp"/>
+
+    <!-- Loading, Error, NoData, or RecyclerView for Success -->
+    <FrameLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Loading Screen -->
+        <ProgressBar
+            android:id="@+id/loading_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <!-- Error Screen -->
+        <TextView
+            android:id="@+id/error_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error_message"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <!-- No Data Screen -->
+        <TextView
+            android:id="@+id/no_data_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_recipe_found"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <!-- Recipe List Grid -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recipe_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+</LinearLayout>

@@ -3,4 +3,8 @@
     <string name="recipe_list_screen_title">What do you want to cook today?</string>
     <string name="no_recipe_found">"No recipes found. Try adding some!"</string>
     <string name="error_message">"Error message"</string>
+    <string name="cook_time">"Cook Time: %s"</string>
+    <string name="prep_time">"Prep Time: %s"</string>
+    <string name="ingredient_format_with_max">• %s-%s %s %s</string>
+    <string name="ingredient_format_without_max">• %s %s %s</string>
 </resources>

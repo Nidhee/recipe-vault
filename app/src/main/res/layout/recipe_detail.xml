@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- AppBarLayout for collapsing effect -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        android:fitsSystemWindows="true">
+
+        <!-- CollapsingToolbarLayout for smooth image collapse -->
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@android:color/transparent"
+            app:statusBarScrim="@android:color/transparent"
+            android:fitsSystemWindows="true"
+            app:titleEnabled="false">
+
+            <!-- Recipe Image -->
+            <ImageView
+                android:id="@+id/recipeImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_milk_masala"
+                app:layout_collapseMode="parallax"
+                android:fitsSystemWindows="true"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- Main Content inside NestedScrollView -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+
+            <!-- Recipe Title -->
+            <TextView
+                android:id="@+id/recipeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spaghetti Carbonara"
+                android:textColor="@color/black"
+                android:textSize="24sp"/>
+
+            <!-- Recipe Description -->
+            <TextView
+                android:id="@+id/recipeDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper."
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Cooking Time Display -->
+            <LinearLayout
+                android:id="@+id/cookingTimeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/cookTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cook Time: 20 mins"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@color/colorOnSurface" />
+
+                <TextView
+                    android:id="@+id/prepTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prep Time: 10 mins"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+            <!-- Tags (Difficulty, Meal Type, Cuisine) -->
+            <LinearLayout
+                android:id="@+id/tagsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/difficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/tag_background"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:text="Medium"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/mealType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/tag_background"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:text="Dinner"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/cuisine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/tag_background"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:text="Italian"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Toggle Content Card -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabTextColor="@color/grey"
+                app:tabIndicatorHeight="2dp"
+                app:tabMode="fixed"
+                app:tabGravity="fill"
+                android:layout_marginTop="16dp"/>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+                   </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

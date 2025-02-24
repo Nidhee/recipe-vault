@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimaryContainer"
     android:padding="16dp">
 
     <!-- Header Section -->
@@ -11,14 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/recipe_list_screen_title"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        android:paddingBottom="8dp"/>
+        android:textSize="22sp"
+        android:textColor="@color/colorOnPrimary"
+        android:fitsSystemWindows="true" />
 
     <!-- Loading, Error, NoData, or RecyclerView for Success -->
     <FrameLayout
         android:id="@+id/content_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp">
 
         <!-- Loading Screen -->
         <ProgressBar
@@ -34,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/error_message"
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="@color/colorError"
             android:layout_gravity="center"
             android:visibility="gone"/>
 
@@ -44,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no_recipe_found"
+            android:textColor="@color/colorSurfaceVariant"
             android:layout_gravity="center"
             android:visibility="gone"/>
 

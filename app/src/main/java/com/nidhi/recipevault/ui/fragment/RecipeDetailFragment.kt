@@ -5,10 +5,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayoutMediator
 import com.nidhi.recipevault.R
+import com.nidhi.recipevault.com.nidhi.recipevault.ui.activity.MainActivity
 import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.RecipePagerAdapter
 import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.com.nidhi.recipevault.utils.getDrawableIdByName
@@ -34,6 +38,23 @@ class RecipeDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.d(LogUtils.getTag(this::class.java), "RecipeDetailFragment class onViewCreated called")
         _binding = RecipeDetailBinding.bind(view)
+
+        // hide main activity tool bar
+        (activity as MainActivity).showToolbar(false)
+
+        // replace with detail fragment tool bar
+        val toolbar: Toolbar = binding.recipeDetailToolbar
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+
+        // Enable Back Button
+        val actionBar = (activity as AppCompatActivity).supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // Handle Back Button Click
+        toolbar.setNavigationOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()  // Goes back to previous fragment
+        }
+
         recipe = arguments?.getParcelable("recipe")
         recipe?.let {
             setRecipeData(it)
@@ -47,7 +68,6 @@ class RecipeDetailFragment : Fragment() {
             tab.text = if (position == 0) "Ingredients" else "Method"
 
         }.attach()
-
     }
     private fun setRecipeData(recipe: Recipe) {
         Glide.with(binding.recipeImage.context)
@@ -65,6 +85,8 @@ class RecipeDetailFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         Log.d(LogUtils.getTag(this::class.java), "RecipeDetailFragment class onDestroyView called")
+        // show main activity tool bar
+        (activity as MainActivity).showToolbar(true)
         _binding = null
     }
 }

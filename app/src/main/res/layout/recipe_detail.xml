@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryContainer">
     <!-- AppBarLayout for collapsing effect -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -13,24 +14,35 @@
 
         <!-- CollapsingToolbarLayout for smooth image collapse -->
         <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/recipeDetailCollapsingToolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="@android:color/transparent"
             app:statusBarScrim="@android:color/transparent"
             android:fitsSystemWindows="true"
-            app:titleEnabled="false">
+            app:titleEnabled="false"
+            app:title="Recipe Details">
 
             <!-- Recipe Image -->
             <ImageView
                 android:id="@+id/recipeImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_milk_masala"
                 app:layout_collapseMode="parallax"
                 android:fitsSystemWindows="true"/>
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/recipeDetailToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:navigationIcon="@drawable/ic_arrow_back_white"
+                app:titleTextColor="@android:color/transparent"
+                app:layout_collapseMode="parallax"/>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <!-- Main Content inside NestedScrollView -->
@@ -62,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:text="A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper."
                 android:textSize="16sp"
+                android:textColor="@color/black"
                 android:layout_marginTop="8dp"/>
 
             <!-- Cooking Time Display -->
@@ -77,6 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cook Time: 20 mins"
+                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <View
@@ -90,6 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Prep Time: 10 mins"
+                    android:textColor="@color/black"
                     android:textSize="14sp"/>
             </LinearLayout>
             <!-- Tags (Difficulty, Meal Type, Cuisine) -->
@@ -109,7 +124,8 @@
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="6dp"
                     android:text="Medium"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
 
                 <TextView
                     android:id="@+id/mealType"
@@ -120,7 +136,8 @@
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="6dp"
                     android:text="Dinner"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/cuisine"
@@ -131,7 +148,8 @@
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="6dp"
                     android:text="Italian"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
             </LinearLayout>
 
             <!-- Toggle Content Card -->
@@ -140,13 +158,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabRippleColor="@android:color/transparent"
-                app:tabIndicatorColor="@color/colorPrimary"
-                app:tabSelectedTextColor="@color/colorPrimary"
-                app:tabTextColor="@color/grey"
+                app:tabIndicatorColor="@color/colorOnPrimary"
+                app:tabSelectedTextColor="@color/colorOnPrimary"
+                app:tabTextColor="@color/black"
                 app:tabIndicatorHeight="2dp"
                 app:tabMode="fixed"
                 app:tabGravity="fill"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimaryContainer"/>
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPager"

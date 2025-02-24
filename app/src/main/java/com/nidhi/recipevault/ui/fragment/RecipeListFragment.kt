@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
@@ -31,7 +30,7 @@ class RecipeListFragment : Fragment() {
     private var _binding: RecipeListBinding? = null
     private val binding get() = _binding!!
     private val recipeViewModel: RecipeViewModel by viewModels()
-    lateinit var recipeAdapter: RecipeAdapter
+    private lateinit var recipeAdapter: RecipeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -85,7 +84,7 @@ class RecipeListFragment : Fragment() {
             }
         }
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container_view, detailFragment)
+            .replace(R.id.fragmentContainerView, detailFragment)
             .addToBackStack(null)
             .commit()
     }

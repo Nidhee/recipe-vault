@@ -3,6 +3,7 @@ package com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nidhi.recipevault.R
@@ -27,6 +28,8 @@ class RecipeAdapter constructor(
 
             // Set title
             binding.itemTitle.text = recipe.name
+            // cooking time
+            binding.itemCookTime.text = formatTotalTime(recipe.prepTimeMinutes, recipe.cookTimeMinutes)
             itemView.setOnClickListener { onItemClick(recipe) }
         }
 
@@ -50,7 +53,31 @@ class RecipeAdapter constructor(
 
     // Method to update the list of recipes
     fun setRecipes(newRecipes: List<Recipe>) {
+        val diffCallback = RecipeDiffCallback(recipeList, newRecipes)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+
         recipeList = newRecipes
-        notifyDataSetChanged() // Refresh the entire list
+        diffResult.dispatchUpdatesTo(this)
+    }
+    private fun formatTotalTime(prepTimeMinutes: Int?, cookTimeMinutes: Int?): String {
+        val totalMinutes = (prepTimeMinutes ?: 0) + (cookTimeMinutes ?: 0)
+        return if (totalMinutes > 0) "$totalMinutes min${if (totalMinutes > 1) "s" else ""}" else "N/A"
+    }
+}
+class RecipeDiffCallback(
+    private val oldList: List<Recipe>,
+    private val newList: List<Recipe>
+) : DiffUtil.Callback() {
+
+    override fun getOldListSize(): Int = oldList.size
+
+    override fun getNewListSize(): Int = newList.size
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList[oldItemPosition].recipeId == newList[newItemPosition].recipeId
+    }
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList[oldItemPosition] == newList[newItemPosition]
     }
 }

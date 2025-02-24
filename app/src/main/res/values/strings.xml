@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RecipeVault</string>
+    <string name="app_name">Recipe Vault</string>
     <string name="recipe_list_screen_title">What do you want to cook today?</string>
     <string name="no_recipe_found">"No recipes found. Try adding some!"</string>
     <string name="error_message">"Error message"</string>

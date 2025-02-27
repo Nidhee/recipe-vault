@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayoutMediator
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.activity.MainActivity
 import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.RecipePagerAdapter
 import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.com.nidhi.recipevault.utils.getDrawableIdByName
@@ -39,20 +37,17 @@ class RecipeDetailFragment : Fragment() {
         Log.d(LogUtils.getTag(this::class.java), "RecipeDetailFragment class onViewCreated called")
         _binding = RecipeDetailBinding.bind(view)
 
-        // hide main activity tool bar
-        (activity as MainActivity).showToolbar(false)
-
-        // replace with detail fragment tool bar
-        val toolbar: Toolbar = binding.recipeDetailToolbar
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
 
         // Enable Back Button
+        val toolbar : Toolbar = binding.recipeDetailToolBar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_icon)
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+
         val actionBar = (activity as AppCompatActivity).supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-
         // Handle Back Button Click
-        toolbar.setNavigationOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()  // Goes back to previous fragment
+        binding.recipeDetailToolBar.setNavigationOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
         }
 
         recipe = arguments?.getParcelable("recipe")
@@ -74,7 +69,7 @@ class RecipeDetailFragment : Fragment() {
             .load(context?.getDrawableIdByName(recipe.thumbnail))
             .placeholder(R.drawable.ic_default_thumbnail)
             .into(binding.recipeImage)
-        binding.recipeTitle.text = recipe.name
+        binding.recipeDetailCollapsingToolbar.title = recipe.name
         binding.recipeDescription.text = recipe.description
         binding.cookTime.text =  getString(R.string.cook_time, recipe.cookTimeMinutes.toString())
         binding.prepTime.text =  getString(R.string.prep_time, recipe.prepTimeMinutes.toString())
@@ -86,7 +81,6 @@ class RecipeDetailFragment : Fragment() {
         super.onDestroyView()
         Log.d(LogUtils.getTag(this::class.java), "RecipeDetailFragment class onDestroyView called")
         // show main activity tool bar
-        (activity as MainActivity).showToolbar(true)
         _binding = null
     }
 }

@@ -12,6 +12,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.nidhi.recipevault.R
 import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.RecipeAdapter
 import com.nidhi.recipevault.com.nidhi.recipevault.ui.viewmodel.RecipeViewModel
@@ -48,6 +49,8 @@ class RecipeListFragment : Fragment() {
         _binding = RecipeListBinding.bind(view)
 
         setupRecyclerView()
+        setupAddRecipeFabScrollBehavior()
+
 
         // Collect StateFlow in lifecycle-aware manner
         lifecycleScope.launch {
@@ -124,4 +127,21 @@ class RecipeListFragment : Fragment() {
         binding.recipeList.visibility = View.VISIBLE
         recipeAdapter.setRecipes(recipes)
     }
+
+    private fun setupAddRecipeFabScrollBehavior(){
+        binding.recipeList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                if (dy > 0) {
+                    // Scrolling down → shrink & fade
+                    if (binding.addRecipeFab.isExtended) binding.addRecipeFab.shrink()
+                } else if (dy < 0) {
+                    // Scrolling up → extend & restore
+                    if (!binding.addRecipeFab.isExtended) binding.addRecipeFab.extend()
+                }
+            }
+        })
+    }
+
 }

@@ -50,7 +50,7 @@ class RecipeListFragment : Fragment() {
 
         setupRecyclerView()
         setupAddRecipeFabScrollBehavior()
-
+        setupAddRecipeFabClick()
 
         // Collect StateFlow in lifecycle-aware manner
         lifecycleScope.launch {
@@ -144,4 +144,11 @@ class RecipeListFragment : Fragment() {
         })
     }
 
+    private fun setupAddRecipeFabClick() {
+        binding.addRecipeFab.setOnClickListener {
+            // TODO: Handle Add recipe FAB click here
+            Log.d(LogUtils.getTag(this::class.java), "RecipeListFragment class Add recipe FAB clicked!")
+            // Or start a new Activity
+        }
+    }
 }

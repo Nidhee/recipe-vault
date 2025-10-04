@@ -1,5 +1,9 @@
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -60,3 +64,19 @@
     </FrameLayout>
 
 </LinearLayout>
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/add_recipe_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_recipe"
+        android:contentDescription="@string/add_recipe"
+        app:icon="@drawable/ic_add"
+        app:backgroundTint="@color/colorOnPrimary"
+        app:tint="@color/colorPrimary"
+        app:layout_anchorGravity="bottom|end"
+        app:iconPadding="2dp"
+        android:layout_margin="16dp"
+        android:textAllCaps="false"
+        android:layout_gravity="bottom|end" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -134,10 +134,10 @@ class RecipeListFragment : Fragment() {
                 super.onScrolled(recyclerView, dx, dy)
 
                 if (dy > 0) {
-                    // Scrolling down → shrink & fade
+                    // Scrolling down → shrink
                     if (binding.addRecipeFab.isExtended) binding.addRecipeFab.shrink()
                 } else if (dy < 0) {
-                    // Scrolling up → extend & restore
+                    // Scrolling up → extend  
                     if (!binding.addRecipeFab.isExtended) binding.addRecipeFab.extend()
                 }
             }

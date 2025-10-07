@@ -8,4 +8,8 @@
     <string name="ingredient_format_with_max">• %s-%s %s %s</string>
     <string name="ingredient_format_without_max">• %s %s %s</string>
     <string name="add_recipe">Add Recipe</string>
+    <string name="add_recipe_name">Recipe name</string>
+    <string name="add_recipe_upload_recipe_image">Upload a recipe image</string>
+    <string name="cook_time_in_minutes">"Cooking Time (in minutes)"</string>
+    <string name="prep_time_in_minutes">"Preparation Time (in minutes)"</string>
 </resources>

@@ -19,6 +19,7 @@ import com.nidhi.recipevault.com.nidhi.recipevault.ui.viewmodel.RecipeViewModel
 import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.databinding.RecipeListBinding
 import com.nidhi.recipevault.domain.model.Recipe
+import com.nidhi.recipevault.ui.fragment.AddRecipeFragment
 import com.nidhi.recipevault.ui.state.RecipeUiState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -137,7 +138,7 @@ class RecipeListFragment : Fragment() {
                     // Scrolling down → shrink
                     if (binding.addRecipeFab.isExtended) binding.addRecipeFab.shrink()
                 } else if (dy < 0) {
-                    // Scrolling up → extend  
+                    // Scrolling up → extend
                     if (!binding.addRecipeFab.isExtended) binding.addRecipeFab.extend()
                 }
             }
@@ -146,9 +147,16 @@ class RecipeListFragment : Fragment() {
 
     private fun setupAddRecipeFabClick() {
         binding.addRecipeFab.setOnClickListener {
-            // TODO: Handle Add recipe FAB click here
             Log.d(LogUtils.getTag(this::class.java), "RecipeListFragment class Add recipe FAB clicked!")
-            // Or start a new Activity
+            openAddRecipeFragment()
         }
+    }
+
+    private fun openAddRecipeFragment() {
+        val addRecipeFragment =  AddRecipeFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView, addRecipeFragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

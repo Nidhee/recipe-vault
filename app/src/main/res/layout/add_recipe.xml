@@ -27,78 +27,51 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="16dp" >
-            <!-- Name -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/addRecipeNameTextInputLayout"
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/stepsViewPager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_recipe_name"
-                android:layout_marginBottom="16dp"
-                style="@style/AppTextInputLayout">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addRecipeName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/AppTextInputEditText"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <!-- Upload recipe image  -->
+                android:overScrollMode="never" />
+
             <LinearLayout
-                android:id="@+id/addRecipeImageContainer"
+                android:id="@+id/bottomBar"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="@drawable/bg_upload_box"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginBottom="16dp">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginTop="16dp"
+                android:weightSum="3"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
-                <ImageView
-                    android:id="@+id/addRecipeImageView"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="@string/add_recipe"
-                    android:src="@drawable/ic_add_photo"
-                    app:tint="@color/colorOnPrimary"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/backBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/back"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/add_recipe_upload_recipe_image"
-                    android:textColor="@color/colorOnPrimary"
-                    android:layout_marginTop="8dp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/nextBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/next"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submitBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/submit"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"/>
             </LinearLayout>
-            <!-- Prep time in minutes -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/addRecipePrepTimeTextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prep_time_in_minutes"
-                android:layout_marginBottom="16dp"
-                style="@style/AppTextInputLayout">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addRecipePrepTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/AppTextInputEditText"
-                    android:inputType="number"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <!-- Cook time in minutes -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/addRecipeCookTimeTextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/cook_time_in_minutes"
-                android:layout_marginBottom="16dp"
-                style="@style/AppTextInputLayout">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addRecipeCookTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/AppTextInputEditText"
-                    android:inputType="number"/>
-            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

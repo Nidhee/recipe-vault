@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.nidhi.recipevault.ui.adapter.AddRecipeStepsAdapter
 import com.nidhi.recipevault.databinding.AddRecipeBinding
@@ -21,7 +21,7 @@ class AddRecipeFragment : Fragment() {
 
     private var _binding : AddRecipeBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: AddRecipeViewModel by viewModels()
+    private val viewModel: AddRecipeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,12 +41,15 @@ class AddRecipeFragment : Fragment() {
                 binding.stepsViewPager.currentItem = binding.stepsViewPager.currentItem - 1
                 updateButtons()
             } else {
+                viewModel.resetAll()
                 parentFragmentManager.popBackStack()
             }
         }
 
         binding.stepsViewPager.adapter = AddRecipeStepsAdapter(this)
         binding.stepsViewPager.isUserInputEnabled = false
+        // keep all steps in memory so previews persist when navigating
+        binding.stepsViewPager.offscreenPageLimit = (binding.stepsViewPager.adapter?.itemCount ?: 1)
 
         binding.nextBtn.setOnClickListener {
             if (validateCurrentStep()) {
@@ -79,6 +82,7 @@ class AddRecipeFragment : Fragment() {
                     updateButtons()
                 } else {
                     isEnabled = false
+                    viewModel.resetAll()
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }
             }
@@ -101,9 +105,14 @@ class AddRecipeFragment : Fragment() {
         binding.submitBtn.visibility = if (currentIndex == last) View.VISIBLE else View.GONE
     }
 
+    /**
+     *  pre-step validation
+     */
     private fun validateCurrentStep(): Boolean {
-        // TODO per-step validation
-        return true
+        return when (binding.stepsViewPager.currentItem) {
+            0 -> viewModel.validateStep1()
+            else -> true
+        }
     }
 
     companion object {

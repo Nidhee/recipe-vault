@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addRecipeNameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_recipe_name"
@@ -19,34 +20,9 @@
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:id="@+id/addRecipeImageContainer"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/bg_upload_box"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_marginBottom="16dp">
-
-        <ImageView
-            android:id="@+id/addRecipeImageView"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:contentDescription="@string/add_recipe"
-            android:src="@drawable/ic_add_photo"
-            app:tint="@color/colorOnPrimary"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_recipe_upload_recipe_image"
-            android:textColor="@color/colorOnPrimary"
-            android:layout_marginTop="8dp"/>
-    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addRecipeCookTimeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/cook_time_in_minutes"
@@ -61,6 +37,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addRecipePrepTimeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/prep_time_in_minutes"

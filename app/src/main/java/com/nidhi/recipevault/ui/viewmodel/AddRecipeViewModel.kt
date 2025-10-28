@@ -19,8 +19,79 @@ class AddRecipeViewModel @Inject constructor(
         val isSubmitting: Boolean = false
     )
 
+    data class Step1Fields(
+        val name: String = "",
+        val cookTimeMinutes: String = "",
+        val prepTimeMinutes: String = ""
+    )
+
+    data class Step1Errors(
+        val nameError: String? = null,
+        val cookTimeError: String? = null,
+        val prepTimeError: String? = null
+    )
+
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState
+
+    private val _step1Fields = MutableStateFlow(Step1Fields())
+    val step1Fields: StateFlow<Step1Fields> = _step1Fields
+
+    private val _step1Errors = MutableStateFlow(Step1Errors())
+    val step1Errors: StateFlow<Step1Errors> = _step1Errors
+
+    fun setName(name: String) {
+        _step1Fields.update { it.copy(name = name) }
+        // Clear error as user types
+        if (name.isNotBlank() && _step1Errors.value.nameError != null) {
+            _step1Errors.update { it.copy(nameError = null) }
+        }
+    }
+
+    fun setCookTimeMinutes(cookTime: String) {
+        _step1Fields.update { it.copy(cookTimeMinutes = cookTime) }
+        if (cookTime.isNotBlank() && _step1Errors.value.cookTimeError != null) {
+            _step1Errors.update { it.copy(cookTimeError = null) }
+        }
+    }
+
+    fun setPrepTimeMinutes(prepTime: String) {
+        _step1Fields.update { it.copy(prepTimeMinutes = prepTime) }
+        if (prepTime.isNotBlank() && _step1Errors.value.prepTimeError != null) {
+            _step1Errors.update { it.copy(prepTimeError = null) }
+        }
+    }
+
+
+    fun validateStep1(): Boolean {
+        val fields = _step1Fields.value
+        var valid = true
+        var nameErr: String? = null
+        var cookErr: String? = null
+        var prepErr: String? = null
+
+        if (fields.name.isBlank()) {
+            nameErr = "Name cannot be empty"
+            valid = false
+        }
+        if (fields.cookTimeMinutes.isBlank()) {
+            cookErr = "Cook time required"
+            valid = false
+        } else if (fields.cookTimeMinutes.toIntOrNull() == null) {
+            cookErr = "Enter a valid number"
+            valid = false
+        }
+        if (fields.prepTimeMinutes.isBlank()) {
+            prepErr = "Prep time required"
+            valid = false
+        } else if (fields.prepTimeMinutes.toIntOrNull() == null) {
+            prepErr = "Enter a valid number"
+            valid = false
+        }
+
+        _step1Errors.update { it.copy(nameError = nameErr, cookTimeError = cookErr, prepTimeError = prepErr) }
+        return valid
+    }
 
     fun goToNextStep() {
         _uiState.update { it.copy(step = it.step + 1) }
@@ -45,6 +116,12 @@ class AddRecipeViewModel @Inject constructor(
                 _uiState.update { it.copy(isSubmitting = false) }
             }
         }
+    }
+
+    fun resetAll() {
+        _step1Fields.value = Step1Fields()
+        _step1Errors.value = Step1Errors()
+        _uiState.value = UiState()
     }
 }
 

@@ -20,6 +20,23 @@
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Add this new description field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addRecipeDescriptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_recipe_description"
+        android:layout_marginBottom="16dp"
+        style="@style/AppTextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addRecipeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTextInputEditText"
+            android:inputType="textMultiLine"
+            android:maxLines="5"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/addRecipeCookTimeLayout"

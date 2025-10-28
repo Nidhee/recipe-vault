@@ -39,6 +39,9 @@ class AddRecipeStep1Fragment : Fragment() {
         binding.addRecipeName.doOnTextChanged { text, _, _, _ ->
             addRecipeViewModel.setName(text?.toString()?.trim().orEmpty())
         }
+        binding.addRecipeDescription.doOnTextChanged { text, _, _, _ ->  // Add this
+            addRecipeViewModel.setDescription(text?.toString()?.trim().orEmpty())
+        }
         binding.addRecipeCookTime.doOnTextChanged { text, _, _, _ ->
             val filtered = text?.toString()?.filter { it.isDigit() }.orEmpty()
             if (filtered != text?.toString()) {
@@ -64,6 +67,7 @@ class AddRecipeStep1Fragment : Fragment() {
                 launch {
                     addRecipeViewModel.step1Errors.collect { errors ->
                         binding.addRecipeNameLayout.error = errors.nameError
+                        binding.addRecipeDescriptionLayout.error = errors.descriptionError
                         binding.addRecipeCookTimeLayout.error = errors.cookTimeError
                         binding.addRecipePrepTimeLayout.error = errors.prepTimeError
                     }

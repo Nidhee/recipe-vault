@@ -21,12 +21,14 @@ class AddRecipeViewModel @Inject constructor(
 
     data class Step1Fields(
         val name: String = "",
+        val description: String = "",
         val cookTimeMinutes: String = "",
         val prepTimeMinutes: String = ""
     )
 
     data class Step1Errors(
         val nameError: String? = null,
+        val descriptionError: String? = null,
         val cookTimeError: String? = null,
         val prepTimeError: String? = null
     )
@@ -47,7 +49,13 @@ class AddRecipeViewModel @Inject constructor(
             _step1Errors.update { it.copy(nameError = null) }
         }
     }
-
+    fun setDescription(description: String) {
+        _step1Fields.update { it.copy(description = description) }
+        // Clear error as user types
+        if (description.isNotBlank() && _step1Errors.value.descriptionError != null) {
+            _step1Errors.update { it.copy(descriptionError = null) }
+        }
+    }
     fun setCookTimeMinutes(cookTime: String) {
         _step1Fields.update { it.copy(cookTimeMinutes = cookTime) }
         if (cookTime.isNotBlank() && _step1Errors.value.cookTimeError != null) {
@@ -67,6 +75,7 @@ class AddRecipeViewModel @Inject constructor(
         val fields = _step1Fields.value
         var valid = true
         var nameErr: String? = null
+        var descErr: String? = null
         var cookErr: String? = null
         var prepErr: String? = null
 
@@ -74,6 +83,7 @@ class AddRecipeViewModel @Inject constructor(
             nameErr = "Name cannot be empty"
             valid = false
         }
+        // Note: Description is optional, so we don't add validation for it
         if (fields.cookTimeMinutes.isBlank()) {
             cookErr = "Cook time required"
             valid = false
@@ -89,7 +99,12 @@ class AddRecipeViewModel @Inject constructor(
             valid = false
         }
 
-        _step1Errors.update { it.copy(nameError = nameErr, cookTimeError = cookErr, prepTimeError = prepErr) }
+        _step1Errors.update { it.copy(
+            nameError = nameErr,
+            descriptionError = descErr,
+            cookTimeError = cookErr,
+            prepTimeError = prepErr
+        ) }
         return valid
     }
 

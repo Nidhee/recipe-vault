@@ -16,4 +16,12 @@
     <string name="back">Back</string>
     <string name="next">Next</string>
     <string name="submit">Submit Recipe</string>
+    <string name="servings_people">Servings (people)</string>
+    <string name="difficulty_level">Difficulty Level</string>
+    <string name="meal_type">Meal Type</string>
+    <string name="cuisine">Cuisine</string>
+    <!-- Dialog titles -->
+    <string name="select_difficulty_level">Select Difficulty Level</string>
+    <string name="select_meal_type">Select Meal Type</string>
+    <string name="select_cuisine">Select Cuisine</string>
 </resources>

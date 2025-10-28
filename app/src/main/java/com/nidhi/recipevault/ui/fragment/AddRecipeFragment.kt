@@ -111,6 +111,7 @@ class AddRecipeFragment : Fragment() {
     private fun validateCurrentStep(): Boolean {
         return when (binding.stepsViewPager.currentItem) {
             0 -> viewModel.validateStep1()
+            1 -> viewModel.validateStep2()
             else -> true
         }
     }

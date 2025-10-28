@@ -2,6 +2,9 @@ package com.nidhi.recipevault.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.CuisineDomain
+import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.DifficultyLevelDomain
+import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MealTypeDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -33,6 +36,20 @@ class AddRecipeViewModel @Inject constructor(
         val prepTimeError: String? = null
     )
 
+    data class Step2Fields(
+        val servings: String = "",
+        val difficultyLevel: DifficultyLevelDomain? = null,
+        val mealType: MealTypeDomain? = null,
+        val cuisine: CuisineDomain? = null
+    )
+
+    data class Step2Errors(
+        val servingsError: String? = null,
+        val difficultyError: String? = null,
+        val mealTypeError: String? = null,
+        val cuisineError: String? = null
+    )
+
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState
 
@@ -41,6 +58,12 @@ class AddRecipeViewModel @Inject constructor(
 
     private val _step1Errors = MutableStateFlow(Step1Errors())
     val step1Errors: StateFlow<Step1Errors> = _step1Errors
+
+    private val _step2Fields = MutableStateFlow(Step2Fields())
+    val step2Fields: StateFlow<Step2Fields> = _step2Fields
+
+    private val _step2Errors = MutableStateFlow(Step2Errors())
+    val step2Errors: StateFlow<Step2Errors> = _step2Errors
 
     fun setName(name: String) {
         _step1Fields.update { it.copy(name = name) }
@@ -108,6 +131,83 @@ class AddRecipeViewModel @Inject constructor(
         return valid
     }
 
+    // Step 2 Methods
+    fun setServings(servings: String) {
+        _step2Fields.update { it.copy(servings = servings) }
+        if (servings.isNotBlank() && _step2Errors.value.servingsError != null) {
+            _step2Errors.update { it.copy(servingsError = null) }
+        }
+    }
+
+    fun setDifficultyLevel(difficulty: DifficultyLevelDomain?) {
+        _step2Fields.update { it.copy(difficultyLevel = difficulty) }
+        if (difficulty != null && _step2Errors.value.difficultyError != null) {
+            _step2Errors.update { it.copy(difficultyError = null) }
+        }
+    }
+
+    fun setMealType(mealType: MealTypeDomain?) {
+        _step2Fields.update { it.copy(mealType = mealType) }
+        if (mealType != null && _step2Errors.value.mealTypeError != null) {
+            _step2Errors.update { it.copy(mealTypeError = null) }
+        }
+    }
+
+    fun setCuisine(cuisine: CuisineDomain?) {
+        _step2Fields.update { it.copy(cuisine = cuisine) }
+        if (cuisine != null && _step2Errors.value.cuisineError != null) {
+            _step2Errors.update { it.copy(cuisineError = null) }
+        }
+    }
+
+    fun validateStep2(): Boolean {
+        val fields = _step2Fields.value
+        var valid = true
+        var servingsErr: String? = null
+        var difficultyErr: String? = null
+        var mealTypeErr: String? = null
+        var cuisineErr: String? = null
+
+        if (fields.servings.isBlank()) {
+            servingsErr = "Servings cannot be empty"
+            valid = false
+        } else {
+            val servingsInt = fields.servings.toIntOrNull()
+            if (servingsInt == null) {
+                servingsErr = "Enter a valid number"
+                valid = false
+            } else if (servingsInt <= 0) {
+                servingsErr = "Servings must be greater than 0"
+                valid = false
+            }
+        }
+
+        if (fields.difficultyLevel == null) {
+            difficultyErr = "Please select a difficulty level"
+            valid = false
+        }
+
+        if (fields.mealType == null) {
+            mealTypeErr = "Please select a meal type"
+            valid = false
+        }
+
+        if (fields.cuisine == null) {
+            cuisineErr = "Please select a cuisine"
+            valid = false
+        }
+
+        _step2Errors.update {
+            it.copy(
+                servingsError = servingsErr,
+                difficultyError = difficultyErr,
+                mealTypeError = mealTypeErr,
+                cuisineError = cuisineErr
+            )
+        }
+        return valid
+    }
+
     fun goToNextStep() {
         _uiState.update { it.copy(step = it.step + 1) }
     }
@@ -136,6 +236,8 @@ class AddRecipeViewModel @Inject constructor(
     fun resetAll() {
         _step1Fields.value = Step1Fields()
         _step1Errors.value = Step1Errors()
+        _step2Fields.value = Step2Fields()
+        _step2Errors.value = Step2Errors()
         _uiState.value = UiState()
     }
 }

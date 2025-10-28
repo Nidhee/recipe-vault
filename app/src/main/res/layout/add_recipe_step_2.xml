@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <!-- TODO: Add step 2  -->
+    <!-- Servings Field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addRecipeServingsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/servings_people"
+        android:layout_marginBottom="16dp"
+        style="@style/AppTextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addRecipeServings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTextInputEditText"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Difficulty Level Dropdown -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addRecipeDifficultyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/difficulty_level"
+        android:layout_marginBottom="16dp"
+        style="@style/AppTextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addRecipeDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTextInputEditText"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Meal Type Dropdown -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addRecipeMealTypeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/meal_type"
+        android:layout_marginBottom="16dp"
+        style="@style/AppTextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addRecipeMealType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTextInputEditText"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Cuisine Dropdown -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addRecipeCuisineLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cuisine"
+        android:layout_marginBottom="16dp"
+        style="@style/AppTextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addRecipeCuisine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTextInputEditText"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
-
-

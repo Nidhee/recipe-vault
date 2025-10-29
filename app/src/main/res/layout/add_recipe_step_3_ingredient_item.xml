@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+        <!-- Row 1: Item Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ingredientItemNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/item_name"
+            android:layout_marginBottom="8dp"
+            style="@style/AppTextInputLayout"
+            android:textDirection="ltr">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingredientItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textNoSuggestions"
+                android:textDirection="ltr"
+                android:layoutDirection="ltr"
+                android:gravity="start|center_vertical"
+                style="@style/AppTextInputEditText"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Row 2: Quantity, Unit, and Remove Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Quantity -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ingredientQtyLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:hint="@string/quantity_hint"
+                android:layout_marginEnd="8dp"
+                style="@style/AppTextInputLayout"
+                android:textDirection="ltr">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingredientQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal|numberSigned"
+                    style="@style/AppTextInputEditText"
+                    android:textDirection="ltr"
+                    android:layoutDirection="ltr"
+                    android:textAlignment="viewStart"
+                    android:gravity="start|center_vertical"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Unit Dropdown -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ingredientUnitLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:hint="@string/unit"
+                android:layout_marginEnd="8dp"
+                style="@style/AppTextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingredientUnit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true"
+                    style="@style/AppTextInputEditText"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Remove Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ingredientRemoveBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/ic_close"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:backgroundTint="@android:color/transparent"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

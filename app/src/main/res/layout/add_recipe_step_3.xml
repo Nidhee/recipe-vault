@@ -2,9 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="16dp">
 
-    <!-- TODO: Add step 3 fields -->
+    <!-- Add Ingredient Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addRecipeAddIngredientBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/add_ingredient"/>
+
+    <!-- Ingredients RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addRecipeIngredientsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:nestedScrollingEnabled="false"/>
+
+
+    <!-- Error message if no ingredients -->
+    <TextView
+        android:id="@+id/addRecipeIngredientsError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/design_default_color_error"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"/>
 
 </LinearLayout>
 

@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.CuisineDomain
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.DifficultyLevelDomain
+import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MealTypeDomain
+import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.RecipeUnitDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -49,6 +51,12 @@ class AddRecipeViewModel @Inject constructor(
         val mealTypeError: String? = null,
         val cuisineError: String? = null
     )
+    data class Step3Fields(
+        val ingredients: MutableList<Ingredient> = mutableListOf()
+    )
+
+    private val _step3Fields = MutableStateFlow(Step3Fields())
+    val step3Fields: StateFlow<Step3Fields> = _step3Fields
 
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState
@@ -207,7 +215,59 @@ class AddRecipeViewModel @Inject constructor(
         }
         return valid
     }
+    fun addIngredient() {
+        val newIngredient = Ingredient(
+            recipeId = 0,
+            item = "",
+            qty = null,
+            maxQty = null,
+            unit = null
+        )
+        _step3Fields.update {
+            val updatedList = it.ingredients.toMutableList()
+            updatedList.add(0,newIngredient) //inserts at the top of list
+            it.copy(ingredients = updatedList)
+        }
+    }
+    fun removeIngredient(index: Int) {
+        _step3Fields.update {
+            val updatedList = it.ingredients.toMutableList()
+            if (index in updatedList.indices) {
+                updatedList.removeAt(index)
+            }
+            it.copy(ingredients = updatedList)
+        }
+    }
 
+    fun updateIngredientItem(index: Int, item: String) {
+        _step3Fields.update {
+            val updatedList = it.ingredients.toMutableList()
+            if (index in updatedList.indices) {
+                updatedList[index] = updatedList[index].copy(item = item)
+            }
+            it.copy(ingredients = updatedList)
+        }
+    }
+    fun updateIngredientQuantity(index: Int, qty: String) {
+        _step3Fields.update {
+            val updatedList = it.ingredients.toMutableList()
+            if (index in updatedList.indices) {
+                val qtyValue = qty.toDoubleOrNull()
+                updatedList[index] = updatedList[index].copy(qty = qtyValue)
+            }
+            it.copy(ingredients = updatedList)
+        }
+    }
+
+    fun updateIngredientUnit(index: Int, unit: RecipeUnitDomain) {
+        _step3Fields.update {
+            val updatedList = it.ingredients.toMutableList()
+            if (index in updatedList.indices) {
+                updatedList[index] = updatedList[index].copy(unit = unit)
+            }
+            it.copy(ingredients = updatedList)
+        }
+    }
     fun goToNextStep() {
         _uiState.update { it.copy(step = it.step + 1) }
     }

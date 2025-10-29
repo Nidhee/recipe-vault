@@ -24,4 +24,12 @@
     <string name="select_difficulty_level">Select Difficulty Level</string>
     <string name="select_meal_type">Select Meal Type</string>
     <string name="select_cuisine">Select Cuisine</string>
+    <string name="add_ingredients">Add Ingredients</string>
+    <string name="add_ingredient">Add Ingredient</string>
+    <string name="item_name">Item Name</string>
+    <string name="quantity">Quantity</string>
+    <string name="quantity_hint">Qty or Qty-Max</string>
+    <string name="unit">Unit</string>
+    <string name="remove">Remove</string>
+    <string name="select_unit">Select Unit</string>
 </resources>

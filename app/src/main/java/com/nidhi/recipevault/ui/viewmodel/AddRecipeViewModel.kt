@@ -51,12 +51,20 @@ class AddRecipeViewModel @Inject constructor(
         val mealTypeError: String? = null,
         val cuisineError: String? = null
     )
+
     data class Step3Fields(
         val ingredients: MutableList<Ingredient> = mutableListOf()
     )
 
+    data class Step3Errors(
+        val ingredientError: String? = null
+    )
+
     private val _step3Fields = MutableStateFlow(Step3Fields())
     val step3Fields: StateFlow<Step3Fields> = _step3Fields
+
+    private val _step3Errors = MutableStateFlow(Step3Errors())
+    val step3Errors: StateFlow<Step3Errors> = _step3Errors
 
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState
@@ -228,6 +236,10 @@ class AddRecipeViewModel @Inject constructor(
             updatedList.add(0,newIngredient) //inserts at the top of list
             it.copy(ingredients = updatedList)
         }
+        // Clear the ingredient error if one existed and list is no longer empty
+        if (_step3Fields.value.ingredients.isNotEmpty()) {
+            _step3Errors.value = Step3Errors(ingredientError = null)
+        }
     }
     fun removeIngredient(index: Int) {
         _step3Fields.update {
@@ -268,6 +280,30 @@ class AddRecipeViewModel @Inject constructor(
             it.copy(ingredients = updatedList)
         }
     }
+
+    fun validateStep3(): Boolean {
+        val ingredients = _step3Fields.value.ingredients
+
+        // No ingredients at all
+        if (ingredients.isEmpty()) {
+            _step3Errors.value = Step3Errors(ingredientError = "Add at least one ingredient before proceeding.")
+            return false
+        }
+        // Find any ingredient missing any required field
+        val incompleteIngredient = ingredients.find {
+            it.item.isBlank() || it.qty == null || it.unit == null
+        }
+        return if (incompleteIngredient != null) {
+            _step3Errors.value = Step3Errors(
+                ingredientError = "All ingredients must have item name, quantity, and unit."
+            )
+            false
+        } else {
+            _step3Errors.value = Step3Errors(ingredientError = null)
+            true
+        }
+    }
+
     fun goToNextStep() {
         _uiState.update { it.copy(step = it.step + 1) }
     }

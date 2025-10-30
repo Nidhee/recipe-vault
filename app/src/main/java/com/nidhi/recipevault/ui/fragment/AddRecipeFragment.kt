@@ -112,6 +112,7 @@ class AddRecipeFragment : Fragment() {
         return when (binding.stepsViewPager.currentItem) {
             0 -> viewModel.validateStep1()
             1 -> viewModel.validateStep2()
+            2 -> viewModel.validateStep3()
             else -> true
         }
     }

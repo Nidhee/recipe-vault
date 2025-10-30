@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.AddIngredientItemAdapter
 import com.nidhi.recipevault.databinding.AddRecipeStep3Binding
@@ -33,6 +35,7 @@ class AddRecipeStep3Fragment : Fragment() {
         setupIngredientsRecyclerView()
         observeIngredients()
         setupAddIngredientButton()
+        setupErrorMessage()
     }
 
     private fun setupIngredientsRecyclerView() {
@@ -70,7 +73,21 @@ class AddRecipeStep3Fragment : Fragment() {
             addRecipeViewModel.addIngredient()
         }
     }
-
+    private fun setupErrorMessage(){
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                addRecipeViewModel.step3Errors.collect { errors ->
+                    if (errors.ingredientError != null) {
+                        binding.addRecipeIngredientsError.text = errors.ingredientError
+                        binding.addRecipeIngredientsError.visibility = View.VISIBLE
+                    } else {
+                        binding.addRecipeIngredientsError.text = ""
+                        binding.addRecipeIngredientsError.visibility = View.GONE
+                    }
+                }
+            }
+        }
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

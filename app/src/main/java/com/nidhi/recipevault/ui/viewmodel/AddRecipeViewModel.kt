@@ -389,6 +389,8 @@ class AddRecipeViewModel @Inject constructor(
         _step1Errors.value = Step1Errors()
         _step2Fields.value = Step2Fields()
         _step2Errors.value = Step2Errors()
+        _step3Fields.value = Step3Fields()
+        _step3Errors.value = Step3Errors()
         _step4Fields.value = Step4Fields()
         _step4Errors.value = Step4Errors()
         _uiState.value = UiState()

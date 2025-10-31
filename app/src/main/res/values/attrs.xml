@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="HorizontalStepperView">
+        <attr name="stepperTextColor" format="color" />
+        <attr name="stepperActiveColor" format="color" />
+        <attr name="stepperInactiveColor" format="color" />
+        <attr name="stepperDoneColor" format="color" />
+    </declare-styleable>
+</resources>

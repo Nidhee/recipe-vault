@@ -10,7 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.AddIngredientItemAdapter
+import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.AddRecipeStep3IngredientItemAdapter
 import com.nidhi.recipevault.databinding.AddRecipeStep3Binding
 import com.nidhi.recipevault.ui.viewmodel.AddRecipeViewModel
 import kotlinx.coroutines.launch
@@ -20,7 +20,7 @@ class AddRecipeStep3Fragment : Fragment() {
     private var _binding : AddRecipeStep3Binding? = null
     private val binding get() = _binding!!
     private val addRecipeViewModel: AddRecipeViewModel by activityViewModels()
-    private lateinit var ingredientsAdapter: AddIngredientItemAdapter
+    private lateinit var ingredientsAdapter: AddRecipeStep3IngredientItemAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +39,7 @@ class AddRecipeStep3Fragment : Fragment() {
     }
 
     private fun setupIngredientsRecyclerView() {
-        ingredientsAdapter = AddIngredientItemAdapter(
+        ingredientsAdapter = AddRecipeStep3IngredientItemAdapter(
             onItemRemove = { index ->
                 addRecipeViewModel.removeIngredient(index)
             },

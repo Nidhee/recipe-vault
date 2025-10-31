@@ -9,12 +9,12 @@ import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.RecipeUnitDomain
 import com.nidhi.recipevault.databinding.AddRecipeStep3IngredientItemBinding
 
-class AddIngredientItemAdapter(
+class AddRecipeStep3IngredientItemAdapter(
     private val onItemRemove: (Int) -> Unit,
     private val onUnitSelected: (Int, RecipeUnitDomain) -> Unit,
     private val onItemNameChanged: (Int, String) -> Unit,
     private val onQuantityChanged: (Int, String) -> Unit
-) : ListAdapter<Ingredient, AddIngredientItemAdapter.IngredientViewHolder>(IngredientDiffCallback()) {
+) : ListAdapter<Ingredient, AddRecipeStep3IngredientItemAdapter.IngredientViewHolder>(IngredientDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
         val binding = AddRecipeStep3IngredientItemBinding.inflate(

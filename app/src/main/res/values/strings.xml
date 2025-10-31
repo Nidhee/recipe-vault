@@ -32,4 +32,6 @@
     <string name="unit">Unit</string>
     <string name="remove">Remove</string>
     <string name="select_unit">Select Unit</string>
+    <string name="method_add_step">Add steps</string>
+    <string name="method_add_step_hint">Step %d</string>
 </resources>

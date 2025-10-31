@@ -113,6 +113,7 @@ class AddRecipeFragment : Fragment() {
             0 -> viewModel.validateStep1()
             1 -> viewModel.validateStep2()
             2 -> viewModel.validateStep3()
+            3 -> viewModel.validateStep4()
             else -> true
         }
     }

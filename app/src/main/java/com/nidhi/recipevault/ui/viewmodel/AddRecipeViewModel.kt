@@ -6,6 +6,7 @@ import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.CuisineDomain
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.DifficultyLevelDomain
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MealTypeDomain
+import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MethodStep
 import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.RecipeUnitDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -59,6 +60,12 @@ class AddRecipeViewModel @Inject constructor(
     data class Step3Errors(
         val ingredientError: String? = null
     )
+    data class Step4Fields(
+        val methodSteps: MutableList<MethodStep> = mutableListOf()
+    )
+    data class Step4Errors(
+        val methodStepError: String? = null
+    )
 
     private val _step3Fields = MutableStateFlow(Step3Fields())
     val step3Fields: StateFlow<Step3Fields> = _step3Fields
@@ -80,6 +87,12 @@ class AddRecipeViewModel @Inject constructor(
 
     private val _step2Errors = MutableStateFlow(Step2Errors())
     val step2Errors: StateFlow<Step2Errors> = _step2Errors
+
+    private val _step4Fields = MutableStateFlow(Step4Fields())
+    val step4Fields: StateFlow<Step4Fields> = _step4Fields
+
+    private val _step4Errors = MutableStateFlow(Step4Errors())
+    val step4Errors: StateFlow<Step4Errors> = _step4Errors
 
     fun setName(name: String) {
         _step1Fields.update { it.copy(name = name) }
@@ -303,7 +316,49 @@ class AddRecipeViewModel @Inject constructor(
             true
         }
     }
+    fun addMethodStep() {
+        val list = _step4Fields.value.methodSteps.toMutableList()
+        val nextOrder = (list.maxOfOrNull { it.stepOrder } ?: 0) + 1
+        list.add(MethodStep(stepId = 0, recipeId = 0, stepOrder = nextOrder, stepDescription = ""))
+        _step4Fields.value = Step4Fields(methodSteps = list)
+    }
 
+    fun removeMethodStep(index: Int) {
+        val list = _step4Fields.value.methodSteps.toMutableList()
+        if(index in list.indices) {
+            list.removeAt(index)
+            // Optionally update stepOrder on all items here!
+        }
+        _step4Fields.value = Step4Fields(methodSteps = list)
+    }
+
+    fun updateMethodStepDescription(index: Int, description: String) {
+        val list = _step4Fields.value.methodSteps.toMutableList()
+        if(index in list.indices) {
+            list[index] = list[index].copy(stepDescription = description)
+        }
+        _step4Fields.value = Step4Fields(methodSteps = list)
+
+        // Clear the error if there is now a non-empty step
+        val hasNonEmptyStep = list.any { it.stepDescription.trim().isNotEmpty() }
+        if (hasNonEmptyStep) {
+            _step4Errors.value = Step4Errors(methodStepError = null)
+        }
+    }
+    fun validateStep4(): Boolean {
+        val steps = _step4Fields.value.methodSteps
+        // Check if there's at least one step and it's not empty
+        val hasNonEmptyStep = steps.any { it.stepDescription.trim().isNotEmpty() }
+        return if (!hasNonEmptyStep) {
+            _step4Errors.value = Step4Errors(
+                methodStepError = "Add at least one method step with a description."
+            )
+            false
+        } else {
+            _step4Errors.value = Step4Errors(methodStepError = null)
+            true
+        }
+    }
     fun goToNextStep() {
         _uiState.update { it.copy(step = it.step + 1) }
     }
@@ -334,6 +389,8 @@ class AddRecipeViewModel @Inject constructor(
         _step1Errors.value = Step1Errors()
         _step2Fields.value = Step2Fields()
         _step2Errors.value = Step2Errors()
+        _step4Fields.value = Step4Fields()
+        _step4Errors.value = Step4Errors()
         _uiState.value = UiState()
     }
 }

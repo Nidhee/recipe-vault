@@ -28,7 +28,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="16dp" >
-
+            <!-- Horizontal Stepper -->
+            <com.nidhi.recipevault.ui.view.HorizontalStepperView
+                android:id="@+id/stepperView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/stepsViewPager"
                 android:layout_width="match_parent"

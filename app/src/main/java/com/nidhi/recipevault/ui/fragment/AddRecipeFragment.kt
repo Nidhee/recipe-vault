@@ -51,11 +51,17 @@ class AddRecipeFragment : Fragment() {
         // keep all steps in memory so previews persist when navigating
         binding.stepsViewPager.offscreenPageLimit = (binding.stepsViewPager.adapter?.itemCount ?: 1)
 
+        // set step titles and initial index
+        val stepTitles = listOf("1", "2", "3", "4")
+        binding.stepperView.setSteps(stepTitles)
+        binding.stepperView.setCurrentStep(binding.stepsViewPager.currentItem)
+
         binding.nextBtn.setOnClickListener {
             if (validateCurrentStep()) {
                 binding.stepsViewPager.currentItem = binding.stepsViewPager.currentItem + 1
                 viewModel.goToNextStep()
                 updateButtons()
+                binding.stepperView.setCurrentStep(binding.stepsViewPager.currentItem)
             }
         }
         binding.backBtn.setOnClickListener {
@@ -63,6 +69,7 @@ class AddRecipeFragment : Fragment() {
                 binding.stepsViewPager.currentItem = binding.stepsViewPager.currentItem - 1
                 viewModel.goToPreviousStep()
                 updateButtons()
+                binding.stepperView.setCurrentStep(binding.stepsViewPager.currentItem)
             }
         }
         binding.submitBtn.setOnClickListener {
@@ -80,6 +87,7 @@ class AddRecipeFragment : Fragment() {
                     binding.stepsViewPager.currentItem = binding.stepsViewPager.currentItem - 1
                     viewModel.goToPreviousStep()
                     updateButtons()
+                    binding.stepperView.setCurrentStep(binding.stepsViewPager.currentItem)
                 } else {
                     isEnabled = false
                     viewModel.resetAll()
@@ -91,6 +99,7 @@ class AddRecipeFragment : Fragment() {
         binding.stepsViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 updateButtons()
+                binding.stepperView.setCurrentStep(position)
             }
         })
 

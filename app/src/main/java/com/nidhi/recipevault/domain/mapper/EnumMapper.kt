@@ -1,15 +1,15 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.domain.mapper
+package com.nidhi.recipevault.domain.mapper
 
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.Cuisine
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.Cuisine.*
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.DifficultyLevel
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.MealType
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.MealType.*
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.RecipeUnit
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.CuisineDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.DifficultyLevelDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MealTypeDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.RecipeUnitDomain
+import com.nidhi.recipevault.data.local.database.Cuisine
+import com.nidhi.recipevault.data.local.database.Cuisine.*
+import com.nidhi.recipevault.data.local.database.DifficultyLevel
+import com.nidhi.recipevault.data.local.database.MealType
+import com.nidhi.recipevault.data.local.database.MealType.*
+import com.nidhi.recipevault.data.local.database.RecipeUnit
+import com.nidhi.recipevault.domain.model.CuisineDomain
+import com.nidhi.recipevault.domain.model.DifficultyLevelDomain
+import com.nidhi.recipevault.domain.model.MealTypeDomain
+import com.nidhi.recipevault.domain.model.RecipeUnitDomain
 import javax.inject.Inject
 
 class EnumMapper @Inject constructor(){

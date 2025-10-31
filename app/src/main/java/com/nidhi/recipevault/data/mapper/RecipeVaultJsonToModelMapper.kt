@@ -2,8 +2,8 @@ package com.nidhi.recipevault.data.mapper
 
 import android.util.Log
 import com.google.gson.Gson
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.model.MethodStepModel
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
+import com.nidhi.recipevault.data.local.model.MethodStepModel
+import com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.data.local.model.RecipeVaultModel
 import javax.inject.Inject
 

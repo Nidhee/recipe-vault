@@ -10,7 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.AddRecipeStep3IngredientItemAdapter
+import com.nidhi.recipevault.ui.adapter.AddRecipeStep3IngredientItemAdapter
 import com.nidhi.recipevault.databinding.AddRecipeStep3Binding
 import com.nidhi.recipevault.ui.viewmodel.AddRecipeViewModel
 import kotlinx.coroutines.launch

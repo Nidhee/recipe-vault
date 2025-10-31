@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.utils
+package com.nidhi.recipevault.utils
 
 object LogUtils {
     private const val COMMON_TAG = "RecipeApp"

@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter
+package com.nidhi.recipevault.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

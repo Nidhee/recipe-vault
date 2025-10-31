@@ -1,13 +1,13 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.data.mapper
+package com.nidhi.recipevault.data.mapper
 
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.Cuisine
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.DifficultyLevel
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.MealType
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.RecipeUnit
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.IngredientEntity
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.MethodStepEntity
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.RecipeVaultEntity
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.model.MethodStepModel
+import com.nidhi.recipevault.data.local.database.Cuisine
+import com.nidhi.recipevault.data.local.database.DifficultyLevel
+import com.nidhi.recipevault.data.local.database.MealType
+import com.nidhi.recipevault.data.local.database.RecipeUnit
+import com.nidhi.recipevault.data.local.database.entity.IngredientEntity
+import com.nidhi.recipevault.data.local.database.entity.MethodStepEntity
+import com.nidhi.recipevault.data.local.database.entity.RecipeVaultEntity
+import com.nidhi.recipevault.data.local.model.MethodStepModel
 import com.nidhi.recipevault.data.local.model.RecipeVaultItemModel
 import javax.inject.Inject
 

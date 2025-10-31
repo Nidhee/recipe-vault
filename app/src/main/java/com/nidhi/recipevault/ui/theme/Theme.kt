@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.theme
+package com.nidhi.recipevault.ui.theme
 
 import android.app.Activity
 import android.os.Build

@@ -1,7 +1,7 @@
 package com.nidhi.recipevault
 import android.app.Application
 import android.util.Log
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
+import com.nidhi.recipevault.utils.LogUtils
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 

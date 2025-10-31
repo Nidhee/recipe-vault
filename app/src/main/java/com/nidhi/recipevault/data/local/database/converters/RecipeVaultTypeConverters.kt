@@ -1,11 +1,11 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.converters
+package com.nidhi.recipevault.data.local.database.converters
 
 import androidx.compose.ui.text.toUpperCase
 import androidx.room.TypeConverters
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.Cuisine
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.DifficultyLevel
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.MealType
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.RecipeUnit
+import com.nidhi.recipevault.data.local.database.Cuisine
+import com.nidhi.recipevault.data.local.database.DifficultyLevel
+import com.nidhi.recipevault.data.local.database.MealType
+import com.nidhi.recipevault.data.local.database.RecipeUnit
 
 class RecipeVaultTypeConverters {
     @TypeConverters

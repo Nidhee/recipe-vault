@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.fragment
+package com.nidhi.recipevault.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
+import com.nidhi.recipevault.domain.model.Ingredient
 import com.nidhi.recipevault.databinding.RecipeDetailIngredientsBinding
 import com.nidhi.recipevault.domain.model.Recipe
 

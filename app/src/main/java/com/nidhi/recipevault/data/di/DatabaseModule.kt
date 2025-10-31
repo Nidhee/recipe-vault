@@ -1,13 +1,13 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.data.di
+package com.nidhi.recipevault.data.di
 
 import android.content.Context
 import androidx.room.Room
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.RecipeVaultDatabase
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.RoomDbInitializer
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.dao.IngredientDao
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.dao.MethodStepDao
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.dao.RecipeVaultDao
-import com.nidhi.recipevault.com.nidhi.recipevault.data.mapper.RecipeVaultModelToEntityMapper
+import com.nidhi.recipevault.data.local.database.RecipeVaultDatabase
+import com.nidhi.recipevault.data.local.database.RoomDbInitializer
+import com.nidhi.recipevault.data.local.database.dao.IngredientDao
+import com.nidhi.recipevault.data.local.database.dao.MethodStepDao
+import com.nidhi.recipevault.data.local.database.dao.RecipeVaultDao
+import com.nidhi.recipevault.data.mapper.RecipeVaultModelToEntityMapper
 import com.nidhi.recipevault.data.local.json.RecipeVaultJsonDataSource
 import com.nidhi.recipevault.data.mapper.RecipeVaultJsonToModelMapper
 import dagger.Module

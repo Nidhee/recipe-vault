@@ -1,11 +1,11 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.viewmodel
+package com.nidhi.recipevault.ui.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.DatabaseErrorStateHolder
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.usecase.GetAllRecipesUseCase
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
+import com.nidhi.recipevault.data.local.database.DatabaseErrorStateHolder
+import com.nidhi.recipevault.domain.usecase.GetAllRecipesUseCase
+import com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.domain.model.Recipe
 import com.nidhi.recipevault.ui.state.RecipeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel

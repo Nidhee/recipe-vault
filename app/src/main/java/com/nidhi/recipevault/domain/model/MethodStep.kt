@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.domain.model
+package com.nidhi.recipevault.domain.model
 
 import android.os.Parcel
 import android.os.Parcelable

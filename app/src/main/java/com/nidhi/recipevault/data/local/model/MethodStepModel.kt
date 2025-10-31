@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.data.local.model
+package com.nidhi.recipevault.data.local.model
 
 data class MethodStepModel(
     val recipeId: Int,        // Foreign key to Recipe

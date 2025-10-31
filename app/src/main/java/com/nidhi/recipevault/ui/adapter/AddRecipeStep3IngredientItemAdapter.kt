@@ -1,12 +1,12 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter
+package com.nidhi.recipevault.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.RecipeUnitDomain
+import com.nidhi.recipevault.domain.model.Ingredient
+import com.nidhi.recipevault.domain.model.RecipeUnitDomain
 import com.nidhi.recipevault.databinding.AddRecipeStep3IngredientItemBinding
 
 class AddRecipeStep3IngredientItemAdapter(

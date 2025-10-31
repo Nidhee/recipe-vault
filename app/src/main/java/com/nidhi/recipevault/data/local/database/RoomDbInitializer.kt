@@ -1,14 +1,14 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.data.local.database
+package com.nidhi.recipevault.data.local.database
 
 import android.util.Log
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.google.gson.JsonSyntaxException
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.dao.IngredientDao
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.dao.MethodStepDao
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.dao.RecipeVaultDao
-import com.nidhi.recipevault.com.nidhi.recipevault.data.mapper.RecipeVaultModelToEntityMapper
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
+import com.nidhi.recipevault.data.local.database.dao.IngredientDao
+import com.nidhi.recipevault.data.local.database.dao.MethodStepDao
+import com.nidhi.recipevault.data.local.database.dao.RecipeVaultDao
+import com.nidhi.recipevault.data.mapper.RecipeVaultModelToEntityMapper
+import com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.data.local.json.RecipeVaultJsonDataSource
 import com.nidhi.recipevault.data.mapper.RecipeVaultJsonToModelMapper
 import kotlinx.coroutines.CoroutineScope

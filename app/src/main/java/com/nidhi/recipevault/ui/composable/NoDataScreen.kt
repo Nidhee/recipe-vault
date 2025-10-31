@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.composable
+package com.nidhi.recipevault.ui.composable
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,7 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.theme.RecipeVaultTheme
+import com.nidhi.recipevault.ui.theme.RecipeVaultTheme
 
 @Composable
 fun NoDataScreen(@StringRes message: Int) {

@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.activity
+package com.nidhi.recipevault.ui.activity
 
 import android.os.Bundle
 import android.util.Log
@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.fragment.RecipeListFragment
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
+import com.nidhi.recipevault.ui.fragment.RecipeListFragment
+import com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

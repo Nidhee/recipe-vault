@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.fragment
+package com.nidhi.recipevault.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

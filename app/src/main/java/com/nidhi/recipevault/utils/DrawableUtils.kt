@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.utils
+package com.nidhi.recipevault.utils
 
 import android.content.Context
 import com.nidhi.recipevault.R

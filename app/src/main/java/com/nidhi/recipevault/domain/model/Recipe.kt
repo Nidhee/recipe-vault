@@ -1,11 +1,11 @@
 package com.nidhi.recipevault.domain.model
 
 import android.os.Parcel
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.CuisineDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.DifficultyLevelDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MealTypeDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MethodStep
+import com.nidhi.recipevault.domain.model.CuisineDomain
+import com.nidhi.recipevault.domain.model.DifficultyLevelDomain
+import com.nidhi.recipevault.domain.model.Ingredient
+import com.nidhi.recipevault.domain.model.MealTypeDomain
+import com.nidhi.recipevault.domain.model.MethodStep
 
 import android.os.Parcelable
 

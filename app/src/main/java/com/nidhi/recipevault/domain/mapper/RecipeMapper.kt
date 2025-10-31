@@ -1,10 +1,10 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.domain.mapper
+package com.nidhi.recipevault.domain.mapper
 
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.IngredientEntity
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.MethodStepEntity
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity.RecipeVaultEntity
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MethodStep
+import com.nidhi.recipevault.data.local.database.entity.IngredientEntity
+import com.nidhi.recipevault.data.local.database.entity.MethodStepEntity
+import com.nidhi.recipevault.data.local.database.entity.RecipeVaultEntity
+import com.nidhi.recipevault.domain.model.Ingredient
+import com.nidhi.recipevault.domain.model.MethodStep
 import com.nidhi.recipevault.domain.model.Recipe
 import javax.inject.Inject
 

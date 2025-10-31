@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.theme.RecipeVaultTheme
+import com.nidhi.recipevault.ui.theme.RecipeVaultTheme
 
 @Composable
 fun LoadingScreen() {

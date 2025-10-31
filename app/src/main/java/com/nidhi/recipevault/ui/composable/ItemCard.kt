@@ -25,9 +25,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.theme.RecipeVaultTheme
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.theme.md_theme_light_semi_transparent_black
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.getDrawableId
+import com.nidhi.recipevault.ui.theme.RecipeVaultTheme
+import com.nidhi.recipevault.ui.theme.md_theme_light_semi_transparent_black
+import com.nidhi.recipevault.utils.getDrawableId
 
 @Composable
 fun ItemCard(

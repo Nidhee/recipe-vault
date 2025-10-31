@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.fragment
+package com.nidhi.recipevault.ui.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayoutMediator
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.RecipePagerAdapter
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.getDrawableIdByName
+import com.nidhi.recipevault.ui.adapter.RecipePagerAdapter
+import com.nidhi.recipevault.utils.LogUtils
+import com.nidhi.recipevault.utils.getDrawableIdByName
 import com.nidhi.recipevault.databinding.RecipeDetailBinding
 import com.nidhi.recipevault.domain.model.Recipe
 

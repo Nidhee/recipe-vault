@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.utils
+package com.nidhi.recipevault.utils
 /**
  * Extension function to capitalize the first letter of a string
  */

@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.data.local.database
+package com.nidhi.recipevault.data.local.database
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,10 +1,10 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity
+package com.nidhi.recipevault.data.local.database.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.RecipeUnit
+import com.nidhi.recipevault.data.local.database.RecipeUnit
 
 
 @Entity(

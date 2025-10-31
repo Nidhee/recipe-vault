@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MethodStep
+import com.nidhi.recipevault.domain.model.MethodStep
 import com.nidhi.recipevault.databinding.AddRecipeStep4MethodItemBinding
 
 class AddRecipeStep4MethodItemAdapter(

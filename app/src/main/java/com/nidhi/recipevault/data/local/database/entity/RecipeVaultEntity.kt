@@ -1,11 +1,11 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.entity
+package com.nidhi.recipevault.data.local.database.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.Cuisine
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.DifficultyLevel
-import com.nidhi.recipevault.com.nidhi.recipevault.data.local.database.MealType
+import com.nidhi.recipevault.data.local.database.Cuisine
+import com.nidhi.recipevault.data.local.database.DifficultyLevel
+import com.nidhi.recipevault.data.local.database.MealType
 
 @Entity(tableName = "recipes")
 data class RecipeVaultEntity (

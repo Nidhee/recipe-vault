@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.fragment
+package com.nidhi.recipevault.ui.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -14,9 +14,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.adapter.RecipeAdapter
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.viewmodel.RecipeViewModel
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
+import com.nidhi.recipevault.ui.adapter.RecipeAdapter
+import com.nidhi.recipevault.ui.viewmodel.RecipeViewModel
+import com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.databinding.RecipeListBinding
 import com.nidhi.recipevault.domain.model.Recipe
 import com.nidhi.recipevault.ui.fragment.AddRecipeFragment

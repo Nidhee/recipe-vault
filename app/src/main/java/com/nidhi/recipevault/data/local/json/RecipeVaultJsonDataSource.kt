@@ -2,7 +2,7 @@ package com.nidhi.recipevault.data.local.json
 
 import android.content.Context
 import android.util.Log
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.LogUtils
+import com.nidhi.recipevault.utils.LogUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

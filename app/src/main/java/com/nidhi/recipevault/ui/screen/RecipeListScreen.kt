@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.screen
+package com.nidhi.recipevault.ui.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,8 +7,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.composable.NoDataScreen
-import com.nidhi.recipevault.com.nidhi.recipevault.ui.viewmodel.RecipeViewModel
+import com.nidhi.recipevault.ui.composable.NoDataScreen
+import com.nidhi.recipevault.ui.viewmodel.RecipeViewModel
 import com.nidhi.recipevault.ui.composable.ErrorScreen
 import com.nidhi.recipevault.ui.composable.ItemCard
 import com.nidhi.recipevault.ui.composable.LazyVerticalItemGrid

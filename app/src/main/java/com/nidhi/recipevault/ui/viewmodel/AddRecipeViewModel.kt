@@ -2,12 +2,12 @@ package com.nidhi.recipevault.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.CuisineDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.DifficultyLevelDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.Ingredient
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MealTypeDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MethodStep
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.RecipeUnitDomain
+import com.nidhi.recipevault.domain.model.CuisineDomain
+import com.nidhi.recipevault.domain.model.DifficultyLevelDomain
+import com.nidhi.recipevault.domain.model.Ingredient
+import com.nidhi.recipevault.domain.model.MealTypeDomain
+import com.nidhi.recipevault.domain.model.MethodStep
+import com.nidhi.recipevault.domain.model.RecipeUnitDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

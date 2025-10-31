@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.com.nidhi.recipevault.ui.theme
+package com.nidhi.recipevault.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

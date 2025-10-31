@@ -13,13 +13,13 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.nidhi.recipevault.R
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.CuisineDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.DifficultyLevelDomain
-import com.nidhi.recipevault.com.nidhi.recipevault.domain.model.MealTypeDomain
+import com.nidhi.recipevault.domain.model.CuisineDomain
+import com.nidhi.recipevault.domain.model.DifficultyLevelDomain
+import com.nidhi.recipevault.domain.model.MealTypeDomain
 import com.nidhi.recipevault.databinding.AddRecipeStep2Binding
 import com.nidhi.recipevault.ui.viewmodel.AddRecipeViewModel
 import kotlinx.coroutines.launch
-import com.nidhi.recipevault.com.nidhi.recipevault.utils.capitalize
+import com.nidhi.recipevault.utils.capitalize
 
 class AddRecipeStep2Fragment : Fragment() {
 

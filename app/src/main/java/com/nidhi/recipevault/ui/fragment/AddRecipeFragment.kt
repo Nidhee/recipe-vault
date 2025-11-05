@@ -52,7 +52,7 @@ class AddRecipeFragment : Fragment() {
         binding.stepsViewPager.offscreenPageLimit = (binding.stepsViewPager.adapter?.itemCount ?: 1)
 
         // set step titles and initial index
-        val stepTitles = listOf("1", "2", "3", "4")
+        val stepTitles = listOf("1", "2", "3", "4","5")
         binding.stepperView.setSteps(stepTitles)
         binding.stepperView.setCurrentStep(binding.stepsViewPager.currentItem)
 

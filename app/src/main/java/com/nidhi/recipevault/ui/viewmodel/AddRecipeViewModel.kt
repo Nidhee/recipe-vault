@@ -66,6 +66,14 @@ class AddRecipeViewModel @Inject constructor(
     data class Step4Errors(
         val methodStepError: String? = null
     )
+    // Step 5 (Image) state
+    data class Step5Fields(
+        val imageUri: String? = null
+    )
+
+    data class Step5Errors(
+        val imageError: String? = null
+    )
 
     private val _step3Fields = MutableStateFlow(Step3Fields())
     val step3Fields: StateFlow<Step3Fields> = _step3Fields
@@ -93,6 +101,12 @@ class AddRecipeViewModel @Inject constructor(
 
     private val _step4Errors = MutableStateFlow(Step4Errors())
     val step4Errors: StateFlow<Step4Errors> = _step4Errors
+
+    private val _step5Fields = MutableStateFlow(Step5Fields())
+    val step5Fields: StateFlow<Step5Fields> = _step5Fields
+
+    private val _step5Errors = MutableStateFlow(Step5Errors())
+    val step5Errors: StateFlow<Step5Errors> = _step5Errors
 
     fun setName(name: String) {
         _step1Fields.update { it.copy(name = name) }
@@ -359,6 +373,22 @@ class AddRecipeViewModel @Inject constructor(
             true
         }
     }
+    fun setImageUri(uri: String?) {
+        _step5Fields.update { it.copy(imageUri = uri) }
+        if (!uri.isNullOrBlank() && _step5Errors.value.imageError != null) {
+            _step5Errors.update { it.copy(imageError = null) }
+        }
+    }
+    fun validateStep5(): Boolean {
+        val hasImage = !_step5Fields.value.imageUri.isNullOrBlank()
+        if (!hasImage) {
+            _step5Errors.value = Step5Errors(imageError = "Please add a photo.")
+        } else {
+            _step5Errors.value = Step5Errors(imageError = null)
+        }
+        return hasImage
+    }
+
     fun goToNextStep() {
         _uiState.update { it.copy(step = it.step + 1) }
     }
@@ -393,6 +423,8 @@ class AddRecipeViewModel @Inject constructor(
         _step3Errors.value = Step3Errors()
         _step4Fields.value = Step4Fields()
         _step4Errors.value = Step4Errors()
+        _step5Fields.value = Step5Fields()
+        _step5Errors.value = Step5Errors()
         _uiState.value = UiState()
     }
 }

@@ -1,5 +1,7 @@
 package com.nidhi.recipevault.domain.di
 
+import com.nidhi.recipevault.domain.repository.SystemStatusRepository
+import com.nidhi.recipevault.domain.usecase.ObserveDatabaseInitStatusUseCase
 import com.nidhi.recipevault.domain.repository.RecipeRepository
 import com.nidhi.recipevault.domain.usecase.GetAllRecipesUseCase
 import dagger.Module
@@ -16,4 +18,8 @@ object UseCaseModule {
     fun providesGetAllRecipesUseCase(recipeRepository: RecipeRepository) : GetAllRecipesUseCase {
         return GetAllRecipesUseCase(recipeRepository)
     }
+
+    @Provides
+    @Singleton
+    fun providesObserveDatabaseInitStatusUseCase(repo: SystemStatusRepository): ObserveDatabaseInitStatusUseCase = ObserveDatabaseInitStatusUseCase(repo)
 }

@@ -1,5 +1,7 @@
 package com.nidhi.recipevault.data.di
 
+import com.nidhi.recipevault.data.repository.SystemStatusRepositoryImpl
+import com.nidhi.recipevault.domain.repository.SystemStatusRepository
 import com.nidhi.recipevault.data.local.database.dao.IngredientDao
 import com.nidhi.recipevault.data.local.database.dao.MethodStepDao
 import com.nidhi.recipevault.data.local.database.dao.RecipeVaultDao
@@ -33,4 +35,7 @@ object RepositoryModule {
             recipeMapper
         )
     }
+    @Provides
+    @Singleton
+    fun provideSystemStatusRepository(): SystemStatusRepository = SystemStatusRepositoryImpl()
 }

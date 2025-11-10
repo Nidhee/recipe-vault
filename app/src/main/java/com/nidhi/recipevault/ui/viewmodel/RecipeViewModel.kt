@@ -3,13 +3,12 @@ package com.nidhi.recipevault.ui.viewmodel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nidhi.recipevault.data.local.database.DatabaseErrorStateHolder
+import com.nidhi.recipevault.domain.model.InitStatus
+import com.nidhi.recipevault.domain.usecase.ObserveDatabaseInitStatusUseCase
 import com.nidhi.recipevault.domain.usecase.GetAllRecipesUseCase
-import com.nidhi.recipevault.utils.LogUtils
-import com.nidhi.recipevault.domain.model.Recipe
 import com.nidhi.recipevault.ui.state.RecipeUiState
+import com.nidhi.recipevault.utils.LogUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -19,8 +18,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RecipeViewModel @Inject constructor(private val getAllRecipesUseCase: GetAllRecipesUseCase) :
-    ViewModel() {
+class RecipeViewModel @Inject constructor(private val getAllRecipesUseCase: GetAllRecipesUseCase,
+                                          private val observeDbInitStatus: ObserveDatabaseInitStatusUseCase) : ViewModel() {
 
     private val _recipesState = MutableStateFlow<RecipeUiState>(RecipeUiState.Loading)
     val recipesState: StateFlow<RecipeUiState> = _recipesState.asStateFlow()
@@ -32,9 +31,9 @@ class RecipeViewModel @Inject constructor(private val getAllRecipesUseCase: GetA
     }
     private fun checkDatabaseInitializationError() {
         viewModelScope.launch {
-            DatabaseErrorStateHolder.errorState.collect { error ->
-                if (error != null) {
-                    _recipesState.value = RecipeUiState.Error("Database initialization error: $error")
+            observeDbInitStatus().collect { status ->
+                if (status is InitStatus.Error) {
+                    _recipesState.value = RecipeUiState.Error("Database initialization error: ${status.throwable}")
                 }
             }
         }

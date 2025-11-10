@@ -29,20 +29,15 @@ class RecipeRepositoryImpl @Inject constructor(
     private val recipeVaultModelToEntityMapper : RecipeVaultModelToEntityMapper,
     private val recipeMapper: RecipeMapper
 ) : RecipeRepository {
-    override suspend fun insertRecipesToDB(recipes: RecipeVaultModel) {
-        Log.d(LogUtils.getTag(this::class.java), "insertRecipesToDB")
-        recipes.forEach { recipe ->
-            recipeVaultDao.insertRecipe(
-                recipeVaultModelToEntityMapper.mapRecipeVaultItemModelToEntity(recipeModel = recipe)
-            )
-            ingredientDao.insertIngredients(
-                recipeVaultModelToEntityMapper.mapIngredientModelToEntity(recipeModel = recipe)
-            )
-            methodStepDao.insertMethodSteps(
-                recipeVaultModelToEntityMapper.mapMethodStepModelToEntity(recipeModel = recipe)
-            )
-        }
+
+    override suspend fun insertRecipe(recipe: Recipe) {
+        TODO("Not yet implemented")
     }
+
+    override suspend fun insertRecipes(recipes: List<Recipe>) {
+        TODO("Not yet implemented")
+    }
+    
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun getAllRecipes(): Flow<List<Recipe>> {
         Log.d(LogUtils.getTag(this::class.java), "getAllRecipes")

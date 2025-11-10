@@ -1,4 +1,4 @@
-package com.nidhi.recipevault.domain.mapper
+package com.nidhi.recipevault.data.mapper
 
 import com.nidhi.recipevault.data.local.database.Cuisine
 import com.nidhi.recipevault.data.local.database.Cuisine.*

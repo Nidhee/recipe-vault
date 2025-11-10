@@ -8,7 +8,7 @@ import com.nidhi.recipevault.data.local.database.entity.IngredientEntity
 import com.nidhi.recipevault.data.local.database.entity.MethodStepEntity
 import com.nidhi.recipevault.data.local.database.entity.RecipeVaultEntity
 import com.nidhi.recipevault.data.mapper.RecipeVaultModelToEntityMapper
-import com.nidhi.recipevault.com.nidhi.recipevault.data.mapper.RecipeMapper
+import com.nidhi.recipevault.data.mapper.RecipeMapper
 import com.nidhi.recipevault.domain.repository.RecipeRepository
 import com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.domain.model.Recipe

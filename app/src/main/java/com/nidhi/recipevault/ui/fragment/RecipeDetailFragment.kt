@@ -16,6 +16,7 @@ import com.nidhi.recipevault.utils.LogUtils
 import com.nidhi.recipevault.utils.getDrawableIdByName
 import com.nidhi.recipevault.databinding.RecipeDetailBinding
 import com.nidhi.recipevault.domain.model.Recipe
+import android.net.Uri
 
 class RecipeDetailFragment : Fragment() {
     private var _binding: RecipeDetailBinding? = null
@@ -65,8 +66,21 @@ class RecipeDetailFragment : Fragment() {
         }.attach()
     }
     private fun setRecipeData(recipe: Recipe) {
+        // Load image - check if it's a URI or drawable resource name
+        val imageSource = recipe.thumbnail?.let { thumbnail ->
+            when {
+                thumbnail.startsWith("content://") || thumbnail.startsWith("file://") -> {
+                    // It's a URI, load it directly
+                    Uri.parse(thumbnail)
+                }
+                else -> {
+                    // It's a drawable resource name, get the resource ID
+                    context?.getDrawableIdByName(thumbnail) ?: R.drawable.ic_default_thumbnail
+                }
+            }
+        } ?: R.drawable.ic_default_thumbnail
         Glide.with(binding.recipeImage.context)
-            .load(context?.getDrawableIdByName(recipe.thumbnail))
+            .load(imageSource)
             .placeholder(R.drawable.ic_default_thumbnail)
             .into(binding.recipeImage)
         binding.recipeDetailCollapsingToolbar.title = recipe.name

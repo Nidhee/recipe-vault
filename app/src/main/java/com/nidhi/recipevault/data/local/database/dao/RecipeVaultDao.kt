@@ -20,4 +20,8 @@ interface RecipeVaultDao {
 
     @Query("SELECT * FROM recipes")
     fun getAllRecipes() : Flow<List<RecipeVaultEntity>>
+
+    // to get the maximum recipe ID
+    @Query("SELECT COALESCE(MAX(recipe_id), 0) FROM recipes")
+    suspend fun getMaxRecipeId(): Int
 }

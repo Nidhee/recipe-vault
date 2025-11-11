@@ -41,6 +41,26 @@
                 android:overScrollMode="never" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+    <!-- Progress Overlay shown during submission -->
+    <FrameLayout
+        android:id="@+id/submittingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66000000" />
+
+        <ProgressBar
+            android:id="@+id/addRecipeSubmittingProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
     <!-- Bottom Bar fixed at bottom -->
     <LinearLayout
         android:id="@+id/bottomBar"

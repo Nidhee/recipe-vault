@@ -28,8 +28,29 @@ class RecipeRepositoryImpl @Inject constructor(
     private val recipeMapper: RecipeMapper
 ) : RecipeRepository {
 
+    override suspend fun getNextRecipeId(): Int {
+        val maxId = recipeVaultDao.getMaxRecipeId()
+        return maxId + 1
+    }
+
     override suspend fun insertRecipe(recipe: Recipe) {
-        TODO("Not yet implemented")
+        // Map domain model to entity
+        val recipeEntity = recipeMapper.mapRecipeDomainToEntity(recipe)
+
+        // Insert recipe
+        recipeVaultDao.insertRecipe(recipeEntity)
+
+        // Map and insert ingredients
+        val ingredientEntities = recipe.ingredients.map { ingredient ->
+            recipeMapper.mapIngredientDomainToEntity(recipe.recipeId, ingredient)
+        }
+        ingredientDao.insertIngredients(ingredientEntities)
+
+        // Map and insert method steps
+        val methodStepEntities = recipe.methodSteps.map { methodStep ->
+            recipeMapper.mapMethodStepDomainToEntity(recipe.recipeId, methodStep)
+        }
+        methodStepDao.insertMethodSteps(methodStepEntities)
     }
 
     override suspend fun insertRecipes(recipes: List<Recipe>) {

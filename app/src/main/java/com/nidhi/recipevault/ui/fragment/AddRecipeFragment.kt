@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewpager2.widget.ViewPager2
 import com.nidhi.recipevault.ui.adapter.AddRecipeStepsAdapter
 import com.nidhi.recipevault.databinding.AddRecipeBinding
 import com.nidhi.recipevault.ui.viewmodel.AddRecipeViewModel
+import kotlinx.coroutines.launch
 
 /**
  * A simple [Fragment] subclass.
@@ -34,6 +37,23 @@ class AddRecipeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Observe submitting state to show progress and disable interactions
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(androidx.lifecycle.Lifecycle.State.STARTED) {
+                viewModel.uiState.collect { state ->
+                    val submitting = state.isSubmitting
+                    binding.submittingOverlay.visibility = if (submitting) View.VISIBLE else View.GONE
+
+                    // Disable toolbar back navigation and buttons while submitting
+                    binding.addRecipeToolBar.isEnabled = !submitting
+                    binding.backBtn.isEnabled = !submitting
+                    binding.nextBtn.isEnabled = !submitting
+                    binding.submitBtn.isEnabled = !submitting
+                    binding.stepsViewPager.isUserInputEnabled = !submitting
+                }
+            }
+        }
 
         // toolbar back button navigation handling
         binding.addRecipeToolBar.setNavigationOnClickListener {
@@ -123,6 +143,7 @@ class AddRecipeFragment : Fragment() {
             1 -> viewModel.validateStep2()
             2 -> viewModel.validateStep3()
             3 -> viewModel.validateStep4()
+            4 -> viewModel.validateStep5()
             else -> true
         }
     }

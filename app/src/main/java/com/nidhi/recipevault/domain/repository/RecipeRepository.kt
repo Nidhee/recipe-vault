@@ -7,4 +7,5 @@ interface RecipeRepository {
     suspend fun insertRecipe(recipe: Recipe)
     suspend fun insertRecipes(recipes: List<Recipe>)
     fun getAllRecipes(): Flow<List<Recipe>>
+    suspend fun getNextRecipeId(): Int
 }

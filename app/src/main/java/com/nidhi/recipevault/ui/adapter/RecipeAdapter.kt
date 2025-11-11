@@ -20,9 +20,21 @@ class RecipeAdapter constructor(
     inner class RecipeViewHolder(private val binding: RecipeItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recipe: Recipe) {
-            // Load image
+            // Load image - check if its URI or drawable resource name
+            val imageSource = recipe.thumbnail?.let { thumbnail ->
+                when {
+                    thumbnail.startsWith("content://") || thumbnail.startsWith("file://") -> {
+                        // It's a URI, load it directly
+                        android.net.Uri.parse(thumbnail)
+                    }
+                    else -> {
+                        // It's a drawable resource name, get the resource ID
+                        getDrawableIdByName(binding.itemThumbnail.context, thumbnail)
+                    }
+                }
+            } ?: R.drawable.ic_default_thumbnail
             Glide.with(binding.itemThumbnail.context)
-                .load(getDrawableIdByName(binding.itemThumbnail.context, recipe.thumbnail))
+                .load(imageSource)
                 .placeholder(R.drawable.ic_default_thumbnail)
                 .into(binding.itemThumbnail)
 

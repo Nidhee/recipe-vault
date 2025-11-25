@@ -729,5 +729,121 @@
       "Your dal dhokli is ready, add ghee & lemon juice over the dal while serving along with crispy papads."
     ],
     "thumbnail": "ic_dal_dhokadi"
+  },
+
+  {
+    "recipeId": 8,
+    "name": "Rawa Paniyaram",
+    "description": "Gujarati pasta with sweet and spicy lentil soup",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 20,
+    "servings": 4,
+    "difficultyLevel": "Easy",
+    "mealType": "Breakfast",
+    "cuisine": "Indian",
+    "ingredients": [
+      {
+        "item": "Rawa",
+        "qty": 2,
+        "max_qty": 0,
+        "unit": "cup"
+      },
+      {
+        "item": "Curd",
+        "qty": 1,
+        "max_qty": 0,
+        "unit": "cup"
+      },
+      {
+        "item": "Water",
+        "qty": 1,
+        "max_qty": 0,
+        "unit": "cup"
+      },
+      {
+        "item": "Salt",
+        "qty": 1,
+        "max_qty": 0,
+        "unit": "tsp"
+      },
+      {
+        "item": "Onion",
+        "qty": 1,
+        "max_qty": 0,
+        "unit": "nos"
+      },
+      {
+        "item": "Tomato",
+        "qty": 1,
+        "max_qty": 0,
+        "unit": "nos"
+      },
+      {
+        "item": "Carrot",
+        "qty": 0.5,
+        "max_qty": 0,
+        "unit": "nos"
+      },
+      {
+        "item": "Green peas",
+        "qty": 2,
+        "max_qty": 0,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Curry leaves",
+        "qty": 8,
+        "max_qty": 10,
+        "unit": "nos"
+      },
+      {
+        "item": "Chilly",
+        "qty": 2,
+        "max_qty": 0,
+        "unit": "nos"
+      },
+      {
+        "item": "Oil",
+        "qty": 2,
+        "max_qty": 0,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Mustard seeds",
+        "qty": 1,
+        "max_qty": 0,
+        "unit": "tsp"
+      },
+      {
+        "item": "Hing",
+        "qty": 1,
+        "max_qty": 0,
+        "unit": "pinch"
+      },
+      {
+        "item": "Baking soda or eno",
+        "qty": 0.5,
+        "max_qty": 0,
+        "unit": "tsp"
+      }
+    ],
+    "method": [
+      "In a large bowl, take 2 cups rava, 1 cup curd, and 1 tsp salt.",
+      "Add 1 cup water and mix well to prepare the batter.",
+      "Add another 1/2 cup water, cover, and rest the batter for 20 minutes.",
+      "After resting, mix the batter well again.",
+      "Add chopped onion,grated carrot, chopped tomato, green peas, and fine chopped chillies.",
+      "Add tadka of mustard seeds, curry leaves, and hing into the batter.",
+      "Mix well, ensuring all ingredients are combined.",
+      "Add 1/2 tsp eno fruit salt and 2 tbsp water (or baking soda as an alternative).",
+      "Mix gently to form a frothy batter.",
+      "Heat the appe pan and add oil to each mould.",
+      "Once hot, pour the prepared rava batter into the moulds.",
+      "Cover and simmer for 5 minutes.",
+      "Roast on low to medium flame until the appe turns golden brown.",
+      "Flip and cook both sides evenly.",
+      "Finally, enjoy Rava Paniyaram with chutney."
+    ],
+    "thumbnail": "ic_vegetable_paniyaram"
   }
 ]

@@ -36,4 +36,7 @@
     <string name="method_add_step_hint">Step %d</string>
     <string name="close">Close</string>
     <string name="capture">Capture</string>
+    <string name="share_recipe">Share Recipe</string>
+    <string name="label_ingredients">INGREDIENTS</string>
+    <string name="label_method">METHOD</string>
 </resources>

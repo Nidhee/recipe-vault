@@ -4,19 +4,24 @@ Designed with a focus on clean architecture and an intuitive UI, RecipeVault mak
 
 ✨ Features
 ------------------------
-📚 Store, Add, and Retrieve Recipes
+📚 Store, Add, and Retrieve Recipes:
+
 Manage all your recipes directly within the app - including the ability to add new recipes from the app.
 
-🗂️ Local Database Integration
+🗂️ Local Database Integration:
+
 On first launch, static JSON data is parsed and stored into the local Room database.
 
-🍽️ Render Recipes from Database
+🍽️ Render Recipes from Database:
+
 Recipes are dynamically retrieved from the local database and displayed in the app’s UI.
 
-🧩 MVVM + Clean Architecture
+🧩 MVVM + Clean Architecture:
+
 Built using a modular and maintainable architecture pattern.
 
-🎨 XML-based UI
+🎨 XML-based UI:
+
 UI screens and layouts are implemented using XML views for flexibility and clarity.
 
 🚀 Current Version
@@ -27,6 +32,5 @@ v0.1 : Static Data to Local DB
 - Data is rendered dynamically from the DB
 - Includes basic Recipe List and Recipe Detail screens
 - Add Recipes directly from the app UI: Users can now create and save their own recipes within the app.
-- Share Recipe : Users can share recipe detail cards as PNG images through social media or messaging apps, making it easy to share their favorite dishes.
+- Share Recipe: Users can share recipe detail cards as PNG images through social media or messaging apps, making it easy to share their favorite dishes.
 
-Next milestone: Enable users to add recipes directly from the app UI
